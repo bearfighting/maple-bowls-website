@@ -1,0 +1,40 @@
+{
+  "Metadata": {
+    "title": "Maple Bowl｜更好的食物，更快乐的宠物",
+    "description": "面向宠物家庭的食品、营养与更好生活指南。"
+  },
+  "Navigation": {
+    "nutritionGuide": "营养指南",
+    "reviews": "产品评测",
+    "brands": "品牌",
+    "recipes": "食谱",
+    "videos": "视频",
+    "tools": "工具",
+    "language": "语言"
+  },
+  "Home": {
+    "eyebrow": "加拿大视角 · 值得信赖的信息",
+    "title": "更好的食物，\n更快乐的宠物。",
+    "description": "为我们珍爱的宠物，了解食物、营养，并做出更好的选择。",
+    "primaryCta": "探索营养指南",
+    "secondaryCta": "浏览产品评测",
+    "languageLabel": "当前语言：简体中文",
+    "features": [
+      { "title": "营养基础", "description": "了解食碗里有什么。" },
+      { "title": "加拿大品牌", "description": "从加拿大视角发现值得了解的品牌。" },
+      { "title": "以宠物为先", "description": "为狗狗和猫咪提供清晰的信息。" }
+    ],
+    "explore": "从重要的内容开始",
+    "exploreDescription": "在这里学习、比较，为你珍爱的宠物做出更明智的选择。",
+    "exploreLink": "探索 →"
+  },
+  "NotFound": {
+    "title": "页面不存在",
+    "description": "这个食碗暂时还是空的。",
+    "backHome": "返回首页"
+  },
+  "Footer": {
+    "tagline": "加拿大视角。值得信赖的信息。更好的宠物生活。",
+    "copyright": "© Maple Bowl. 保留所有权利。"
+  }
+}
