@@ -52,3 +52,39 @@ export type Product = {
   nutritionFacts: NutritionFact[];
   sources: Source[];
 };
+
+export type Ingredient = {
+  id: string;
+  slug: string;
+  name: string;
+  aliases: string[];
+  category?: string;
+  description: string;
+  sources: Source[];
+};
+
+export type NutritionTopic = {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  speciesScope: Species[] | "both";
+  sources: Source[];
+};
+
+export type Review = {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  productId?: string;
+  publishedAt: string;
+  updatedAt?: string;
+  sources: Source[];
+};
+
+export type LocalizedText = {
+  zh: string;
+  en?: string;
+  fr?: string;
+};

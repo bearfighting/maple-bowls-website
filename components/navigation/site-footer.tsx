@@ -11,9 +11,9 @@ export async function SiteFooter() {
           <p className="mt-2 max-w-sm text-sm text-primary-foreground/75">{t("tagline")}</p>
         </div>
         <div className="flex gap-4 text-sm text-primary-foreground/80">
-          <Link href="/about" className="hover:text-primary-foreground">About</Link>
-          <Link href="/methodology" className="hover:text-primary-foreground">Methodology</Link>
-          <Link href="/privacy" className="hover:text-primary-foreground">Privacy</Link>
+          <Link href="/about" className="hover:text-primary-foreground">{t("about")}</Link>
+          <Link href="/methodology" className="hover:text-primary-foreground">{t("methodology")}</Link>
+          <Link href="/privacy" className="hover:text-primary-foreground">{t("privacy")}</Link>
         </div>
         <p className="text-xs text-primary-foreground/60">{t("copyright")}</p>
       </div>

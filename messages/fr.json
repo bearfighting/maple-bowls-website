@@ -10,7 +10,10 @@
     "recipes": "Recettes",
     "videos": "Vidéos",
     "tools": "Outils",
-    "language": "Langue"
+    "language": "Langue",
+    "home": "Accueil Maple Bowl",
+    "primary": "Navigation principale",
+    "menu": "Ouvrir le menu"
   },
   "Home": {
     "eyebrow": "Perspective canadienne · Information fiable",
@@ -35,6 +38,13 @@
   },
   "Footer": {
     "tagline": "Perspective canadienne. Information fiable. Une meilleure vie pour les animaux.",
-    "copyright": "© Maple Bowl. Tous droits réservés."
+    "copyright": "© Maple Bowl. Tous droits réservés.",
+    "about": "À propos",
+    "methodology": "Méthodologie",
+    "privacy": "Confidentialité"
+  },
+  "Error": {
+    "title": "Un problème est survenu",
+    "retry": "Réessayer"
   }
 }

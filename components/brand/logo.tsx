@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 
-export function Logo() {
+export function Logo({ homeLabel }: { homeLabel: string }) {
   return (
-    <Link href="/" className="flex items-center gap-2" aria-label="Maple Bowl home">
+    <Link href="/" className="flex items-center gap-2" aria-label={homeLabel}>
       <Image
         src="/brand/favicon.png"
         alt=""

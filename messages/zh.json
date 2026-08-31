@@ -10,7 +10,10 @@
     "recipes": "食谱",
     "videos": "视频",
     "tools": "工具",
-    "language": "语言"
+    "language": "语言",
+    "home": "Maple Bowl 首页",
+    "primary": "主导航",
+    "menu": "打开菜单"
   },
   "Home": {
     "eyebrow": "加拿大视角 · 值得信赖的信息",
@@ -35,6 +38,13 @@
   },
   "Footer": {
     "tagline": "加拿大视角。值得信赖的信息。更好的宠物生活。",
-    "copyright": "© Maple Bowl. 保留所有权利。"
+    "copyright": "© Maple Bowl. 保留所有权利。",
+    "about": "关于我们",
+    "methodology": "研究方法",
+    "privacy": "隐私"
+  },
+  "Error": {
+    "title": "页面出现问题",
+    "retry": "再试一次"
   }
 }

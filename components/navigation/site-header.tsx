@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/navigation/language-switcher";
+import { MobileMenu } from "@/components/navigation/mobile-menu";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/lib/types";
 
@@ -18,8 +19,8 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
   return (
     <header className="border-b border-border/70 bg-background/95">
       <div className="mx-auto flex min-h-20 w-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
-        <Logo />
-        <nav aria-label="Primary" className="hidden items-center gap-5 lg:flex">
+        <Logo homeLabel={t("home")} />
+        <nav aria-label={t("primary")} className="hidden items-center gap-5 lg:flex">
           {links.map((link) => (
             <Link key={link.href} href={link.href} className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary">
               {link.label}
@@ -27,7 +28,8 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <LanguageSwitcher currentLocale={locale} />
+          <MobileMenu menuLabel={t("menu")} links={links} />
+          <LanguageSwitcher currentLocale={locale} ariaLabel={t("language")} />
         </div>
       </div>
     </header>

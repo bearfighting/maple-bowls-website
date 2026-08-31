@@ -1,4 +1,7 @@
+"use client";
+
 import { Link } from "@/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 import type { Locale } from "@/lib/types";
 
 const locales: Array<{ value: Locale; label: string }> = [
@@ -7,13 +10,15 @@ const locales: Array<{ value: Locale; label: string }> = [
   { value: "fr", label: "FR" },
 ];
 
-export function LanguageSwitcher({ currentLocale }: { currentLocale: Locale }) {
+export function LanguageSwitcher({ currentLocale, ariaLabel }: { currentLocale: Locale; ariaLabel: string }) {
+  const pathname = usePathname();
+
   return (
-    <nav aria-label="Language" className="flex items-center gap-1 rounded-full border bg-card p-1">
+    <nav aria-label={ariaLabel} className="flex items-center gap-1 rounded-full border bg-card p-1">
       {locales.map((locale) => (
         <Link
           key={locale.value}
-          href="/"
+          href={pathname}
           locale={locale.value}
           aria-current={currentLocale === locale.value ? "page" : undefined}
           className={`rounded-full px-2.5 py-1.5 text-xs font-bold transition-colors ${
