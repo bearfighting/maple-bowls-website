@@ -12,7 +12,7 @@
 部署目标     Vercel
 国际化       next-intl
 内容优先级   简体中文优先，英文和法文随后完善
-默认语言     `/` 默认进入 `/zh`
+根路径语言   `/` 按 locale cookie 和浏览器/系统语言协商，最终 fallback 到 `/zh`
 主视觉参考   maplebowls.png
 补充参考     maple-bowls.png
 Favicon      现有 favicon.png

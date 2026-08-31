@@ -34,7 +34,7 @@ Technology       Next.js + TypeScript + Tailwind CSS + shadcn/ui
 Deployment       Vercel
 Internationalization next-intl
 Content priority Simplified Chinese first; English and French follow
-Default locale   zh for the root entry unless the visitor has a clear preference
+Root locale      negotiate from locale cookie and browser/system language
 Primary visual   maplebowls.png
 Supplementary    maple-bowls.png
 Favicon          existing favicon.png
@@ -1430,9 +1430,9 @@ maple_paws_locale=en|fr|zh
 A sensible first-visit strategy:
 
 1. honor an explicitly chosen URL locale;
-2. otherwise use remembered locale;
-3. otherwise consider browser language;
-4. otherwise fall back to the default locale.
+2. otherwise use the remembered locale cookie;
+3. otherwise use the browser/system `Accept-Language` preference;
+4. otherwise fall back to `zh`.
 
 Never make search-engine-visible canonical content depend only on a cookie.
 
