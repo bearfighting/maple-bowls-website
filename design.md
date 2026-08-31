@@ -32,6 +32,9 @@ The current implementation baseline is:
 Brand name       Maple Bowl
 Technology       Next.js + TypeScript + Tailwind CSS + shadcn/ui
 Deployment       Vercel
+Internationalization next-intl
+Content priority Simplified Chinese first; English and French follow
+Root locale      negotiate from locale cookie and browser/system language
 Primary visual   maplebowls.png
 Supplementary    maple-bowls.png
 Favicon          existing favicon.png
@@ -44,6 +47,15 @@ surfaces, warm typography, illustrated dog-and-cat bowl motif and the
 initial content-navigation pattern. `maple-bowls.png` is used as a
 supporting brand-board reference for logo variants, colors, characters,
 typography and usage examples.
+
+Simplified Chinese is the primary content language for the first version.
+English and French remain supported from the architectural beginning, but
+content coverage may follow the Chinese-first publishing order.
+
+For proper nouns, brand names and technical terms that do not translate
+naturally, use Chinese and the original term together where useful, for
+example `鸡肉粉（Chicken Meal）`. Preserve original names as aliases for
+search and entity resolution.
 
 The first version uses static display data. Product, nutrition and
 editorial content should be structured like realistic content, but any
@@ -1355,32 +1367,30 @@ This is a foundation-level product requirement.
 
 The language strategy serves more than end-user translation.
 
+### Simplified Chinese
+
+Primary launch content language for:
+
+- Chinese-speaking pet owners;
+- the first content validation cycle;
+- product and nutrition explanations;
+- the primary homepage and discovery experience.
+
 ### English
 
-Primary bridge language for:
+Important for:
 
-- Canadian consumers;
-- manufacturers;
+- Canadian consumers and manufacturers;
 - international audiences;
-- industry partners.
+- original product terminology and source material.
 
 ### French
 
 Important for:
 
-- Québec consumers;
-- Québec manufacturers;
+- Québec consumers and manufacturers;
 - local retailers and partners;
 - a credible Canadian brand presence.
-
-### Simplified Chinese
-
-Important for:
-
-- Chinese pet owners;
-- potential import/distribution relationships;
-- Canadian brands seeking Chinese-market communication;
-- future Canada–China product discovery.
 
 ## 11.3 Architecture Principle
 
@@ -1420,9 +1430,9 @@ maple_paws_locale=en|fr|zh
 A sensible first-visit strategy:
 
 1. honor an explicitly chosen URL locale;
-2. otherwise use remembered locale;
-3. otherwise consider browser language;
-4. otherwise fall back to the default locale.
+2. otherwise use the remembered locale cookie;
+3. otherwise use the browser/system `Accept-Language` preference;
+4. otherwise fall back to `zh`.
 
 Never make search-engine-visible canonical content depend only on a cookie.
 
@@ -1446,7 +1456,7 @@ Article B
 
 Do not block a valuable article solely because every translation is unfinished.
 
-However, prioritize complete EN/FR/ZH coverage for:
+However, prioritize complete ZH coverage first, followed by EN and FR, for:
 
 - homepage;
 - navigation;
@@ -1457,6 +1467,11 @@ However, prioritize complete EN/FR/ZH coverage for:
 - primary directory UI;
 - foundational nutrition guides;
 - important brand/product summaries.
+
+When a translation is unavailable, use the documented fallback policy.
+Do not leave the primary Chinese experience with empty fields. A technical
+term may use a bilingual label, while explanatory prose should be translated
+into Chinese whenever a natural translation is possible.
 
 ## 11.6 Structured Data vs Editorial Content
 
@@ -1509,7 +1524,7 @@ Example concept:
 ```text
 Chicken Meal
 Farine de poulet
-鸡肉粉
+鸡肉粉（Chicken Meal）
 ```
 
 All may resolve to the same Ingredient entity.
@@ -1654,7 +1669,7 @@ content.
 
 Internationalization is part of the core architecture.
 
-The implementation should provide:
+The implementation should use `next-intl` as the i18n foundation and provide:
 
 ```text
 locale-aware routing
@@ -1666,6 +1681,11 @@ fallback rules
 hreflang generation
 language switcher behavior
 ```
+
+`next-intl` is responsible for UI messages, locale-aware navigation,
+request locale configuration and shared formatting. Product, Brand,
+Ingredient and Article translations remain part of the Maple Bowl domain
+content model rather than being flattened into UI dictionaries.
 
 The domain model should remain language-neutral where possible.
 
@@ -1890,8 +1910,10 @@ These are intentionally unresolved.
 
 ### Internationalization
 
--   English-first or bilingual-at-launch?
--   How much Chinese localization belongs directly on product pages?
+-   Which product and technical names should use Chinese-only versus
+    Chinese + original bilingual labels?
+-   How much English and French localization should be included in the
+    first public content set after the Chinese core is complete?
 
 ### UI
 

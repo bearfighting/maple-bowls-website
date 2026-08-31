@@ -1,0 +1,50 @@
+{
+  "Metadata": {
+    "title": "Maple Bowl | Une meilleure nourriture. Des animaux plus heureux.",
+    "description": "Un guide de confiance sur l’alimentation, la nutrition et le bien-être des animaux."
+  },
+  "Navigation": {
+    "nutritionGuide": "Guide nutritionnel",
+    "reviews": "Avis sur les produits",
+    "brands": "Marques",
+    "recipes": "Recettes",
+    "videos": "Vidéos",
+    "tools": "Outils",
+    "language": "Langue",
+    "home": "Accueil Maple Bowl",
+    "primary": "Navigation principale",
+    "menu": "Ouvrir le menu"
+  },
+  "Home": {
+    "eyebrow": "Perspective canadienne · Information fiable",
+    "title": "Une meilleure nourriture,\ndes animaux plus heureux.",
+    "description": "Comprenez l’alimentation et la nutrition pour faire de meilleurs choix pour les animaux que nous aimons.",
+    "primaryCta": "Explorer le guide nutritionnel",
+    "secondaryCta": "Voir les avis sur les produits",
+    "languageLabel": "Langue actuelle : Français",
+    "features": [
+      { "title": "Bases de la nutrition", "description": "Comprenez ce qui se trouve dans la gamelle." },
+      { "title": "Marques canadiennes", "description": "Découvrez des marques avec une perspective canadienne." },
+      { "title": "Les animaux d’abord", "description": "Des informations claires pour les chiens et les chats." }
+    ],
+    "explore": "Commencez par l’essentiel.",
+    "exploreDescription": "Un endroit calme pour apprendre, comparer et faire de meilleurs choix pour les animaux que vous aimez.",
+    "exploreLink": "Explorer →"
+  },
+  "NotFound": {
+    "title": "Page introuvable",
+    "description": "Cette gamelle est vide pour le moment.",
+    "backHome": "Retour à l’accueil"
+  },
+  "Footer": {
+    "tagline": "Perspective canadienne. Information fiable. Une meilleure vie pour les animaux.",
+    "copyright": "© Maple Bowl. Tous droits réservés.",
+    "about": "À propos",
+    "methodology": "Méthodologie",
+    "privacy": "Confidentialité"
+  },
+  "Error": {
+    "title": "Un problème est survenu",
+    "retry": "Réessayer"
+  }
+}
