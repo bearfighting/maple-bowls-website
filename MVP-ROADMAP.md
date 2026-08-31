@@ -10,6 +10,9 @@
 品牌名       Maple Bowl
 技术栈       Next.js + TypeScript + Tailwind CSS + shadcn/ui
 部署目标     Vercel
+国际化       next-intl
+内容优先级   简体中文优先，英文和法文随后完善
+默认语言     `/` 默认进入 `/zh`
 主视觉参考   maplebowls.png
 补充参考     maple-bowls.png
 Favicon      现有 favicon.png
@@ -29,7 +32,7 @@ Favicon      现有 favicon.png
 - 用户可以浏览一篇营养知识内容。
 - 用户可以从品牌进入产品，再进入 Ingredient 或 Nutrition Guide。
 - 产品页能够展示产品事实、营养信息、配料、来源和 Maple Bowl 说明。
-- EN / FR / ZH 三种 locale 路由可以工作。
+- EN / FR / ZH 三种 locale 路由可以工作，简体中文作为首发主语言。
 - 网站在移动端和桌面端都具备基本可用性。
 
 ### MVP 首发页面
@@ -97,6 +100,8 @@ Favicon      现有 favicon.png
 - [ ] 配置 TypeScript、Tailwind、shadcn/ui 和项目 alias。
 - [ ] 建立基础目录：`components/ui`、`components/brand`、`components/navigation`、`components/product`、`components/content`、`lib`、`content`。
 - [ ] 定义 `Locale`、`PetPreference`、`Species`、`FoodType` 等基础类型。
+- [ ] 安装并配置 `next-intl`，建立 `messages/en.json`、`messages/fr.json`、`messages/zh.json`。
+- [ ] 明确 `next-intl` 管理 UI 文案，产品/品牌/Ingredient/文章翻译由静态领域数据管理。
 - [ ] 建立 semantic theme tokens，并按 `ui-design.md` 映射品牌颜色。
 - [ ] 确定字体和 `next/font` 加载方式。
 - [ ] 添加基础 lint、format 和 typecheck 命令。
@@ -214,6 +219,9 @@ Home → Brand → Product → Ingredient → Nutrition Guide
 ### Checklist
 
 - [ ] 建立 EN / FR / ZH UI translation dictionary。
+- [ ] 优先完成简体中文 UI、首页和核心页面文案。
+- [ ] 对品牌名、产品专名和技术术语采用中文或中文 + 原文双语，并保留原文 alias。
+- [ ] 使用 `next-intl` 提供 Server Components 和 Client Components 的翻译访问方式。
 - [ ] 为 Header、Footer、按钮、Breadcrumb、筛选、空状态、错误页提供三语言文案。
 - [ ] 为核心品牌、产品、Ingredient 和 Guide 添加本地化字段或明确 fallback。
 - [ ] 明确缺少翻译时的行为：fallback、隐藏、或显示未翻译状态。
@@ -229,6 +237,7 @@ Home → Brand → Product → Ingredient → Nutrition Guide
 ### 完成条件
 
 - [ ] `/en/...`、`/fr/...`、`/zh/...` 都能稳定渲染核心页面。
+- [ ] `/zh/...` 的核心用户流程优先达到完整可用，不能出现空白字段或未翻译 key。
 - [ ] 切换语言后仍停留在对应的品牌、产品或内容实体。
 - [ ] 缺少某篇文章翻译时，不会出现空标题、未翻译 key 或破坏布局。
 - [ ] 偏好选择刷新页面后仍然生效。

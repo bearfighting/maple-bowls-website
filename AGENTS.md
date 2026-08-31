@@ -17,6 +17,7 @@ Next.js
 TypeScript
 Tailwind CSS
 shadcn/ui
+next-intl
 ```
 
 Deployment target for the public application is Vercel. Prefer
@@ -54,6 +55,12 @@ fr
 zh
 ```
 
+Simplified Chinese is the primary content and UI language for the first
+release. English and French remain first-class locales in the architecture.
+Translate ordinary content into Chinese whenever natural; for brands,
+product names and technical terms, use Chinese plus the original name when
+helpful, and preserve the original as a searchable alias.
+
 Use locale-aware routing under:
 
 ```text
@@ -71,6 +78,9 @@ Conceptual URLs:
 Do not implement multilingual support as a later translation patch.
 
 The current locale should be represented in the URL.
+
+Use `next-intl` for UI translations, locale-aware navigation and locale
+configuration. Do not create a second ad-hoc translation system.
 
 ---
 

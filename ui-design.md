@@ -1,8 +1,8 @@
 # Maple Bowl — UI Design System
 
 > Status: Draft v0.1  
-> Target stack: **Next.js + Tailwind CSS + shadcn/ui**  
-> Supported locales from V1: **English / Français / 简体中文**
+> Target stack: **Next.js + TypeScript + Tailwind CSS + shadcn/ui + next-intl**  
+> Supported locales from V1: **简体中文优先 / English / Français**
 
 ---
 
@@ -92,7 +92,8 @@ unless there is a documented design reason.
 
 ## 2.5 Trilingual by design
 
-Do not design using English-only assumptions.
+Do not design using English-only assumptions. Validate Chinese first for
+the primary experience, then verify English and French expansion.
 
 Every important component must be tested in:
 
@@ -119,6 +120,10 @@ Next.js owns:
 - locale routes;
 - metadata;
 - content/data loading.
+
+`next-intl` owns UI translation messages, locale-aware navigation and
+request-scoped locale configuration. Domain entities keep their own
+localized content fields.
 
 Suggested structure:
 
@@ -454,7 +459,8 @@ Avoid inventing many page-specific font sizes.
 
 ## 5.5 Chinese typography
 
-Allow locale-specific adjustment where necessary.
+Chinese is the primary content language for the first release. Allow
+locale-specific adjustment where necessary.
 
 Conceptually:
 
