@@ -75,15 +75,15 @@ Favicon      现有 favicon.png
 
 ## 2. Milestone 总览
 
-| Milestone | 目标 | 主要产出 |
-| --- | --- | --- |
-| M0 | 工程初始化与范围冻结 | 可启动的 Next.js 项目、基础规范 |
-| M1 | 品牌壳和全局导航 | Layout、Header、Footer、locale 路由 |
-| M2 | 完整垂直切片 | Home → Brand → Product → Ingredient → Guide |
-| M3 | 页面模板和静态内容系统 | 目录、详情页、统一静态 schema |
-| M4 | 多语言和轻量偏好 | EN / FR / ZH、语言切换、pet cookie |
-| M5 | 搜索与内容发现 | 基础搜索、筛选、相关内容链接 |
-| M6 | 品质、SEO 和上线准备 | 无障碍、响应式、metadata、错误状态、部署 |
+| Milestone | 目标                   | 主要产出                                    |
+| --------- | ---------------------- | ------------------------------------------- |
+| M0        | 工程初始化与范围冻结   | 可启动的 Next.js 项目、基础规范             |
+| M1        | 品牌壳和全局导航       | Layout、Header、Footer、locale 路由         |
+| M2        | 完整垂直切片           | Home → Brand → Product → Ingredient → Guide |
+| M3        | 页面模板和静态内容系统 | 目录、详情页、统一静态 schema               |
+| M4        | 多语言和轻量偏好       | EN / FR / ZH、语言切换、pet cookie          |
+| M5        | 搜索与内容发现         | 基础搜索、筛选、相关内容链接                |
+| M6        | 品质、SEO 和上线准备   | 无障碍、响应式、metadata、错误状态、部署    |
 
 ---
 
@@ -98,14 +98,14 @@ Favicon      现有 favicon.png
 - [x] 确认 Next.js App Router 结构。
 - [x] 创建 `app/[locale]/` 路由骨架。
 - [x] 配置 TypeScript、Tailwind、shadcn/ui 和项目 alias。
-- [ ] 建立基础目录：`components/ui`、`components/brand`、`components/navigation`、`components/product`、`components/content`、`lib`、`content`。
+- [x] 建立基础目录：`components/ui`、`components/brand`、`components/navigation`、`components/product`、`components/content`、`lib`、`content`。
 - [x] 定义 `Locale`、`PetPreference`、`Species`、`FoodType` 等基础类型。
 - [x] 安装并配置 `next-intl`，建立 `messages/en.json`、`messages/fr.json`、`messages/zh.json`。
 - [x] 明确 `next-intl` 管理 UI 文案，产品/品牌/Ingredient/文章翻译由静态领域数据管理。
 - [x] 建立 semantic theme tokens，并按 `ui-design.md` 映射品牌颜色。
-- [ ] 确定字体和 `next/font` 加载方式。
+- [x] 确定字体加载策略：使用可稳定构建的本地 fallback，不引入远程 `next/font`。
 - [x] 添加基础 lint 和 typecheck 命令。
-- [ ] 添加 format 命令。
+- [x] 添加 format 命令。
 - [x] 写出当前 MVP 的页面清单和延后清单。
 
 ### 完成条件
@@ -191,25 +191,25 @@ Home → Brand → Product → Ingredient → Nutrition Guide
 
 ### Checklist
 
-- [ ] 实现 Nutrition Guide Landing。
-- [ ] 实现 Brands Directory。
-- [ ] 实现 Pet Food Directory。
+- [x] 实现 Nutrition Guide Landing。
+- [x] 实现 Brands Directory。
+- [x] 实现 Pet Food Directory。
 - [ ] 实现 Food Type、Life Stage、Species 的基础展示和筛选状态。
 - [ ] 实现 `/food/dog`、`/food/cat` 或等价的 species 入口。
-- [ ] 为目录页添加 empty state。
+- [x] 为目录页添加 empty state。
 - [ ] 为产品详情页添加 loading/error/not-found 处理。
-- [ ] 将页面内容从组件 JSX 中移出，统一放入 `content` 或 `data` 层。
-- [ ] 为静态数据添加基础校验，避免 slug、关联 ID 和必填字段错误。
-- [ ] 确定列表排序规则，先使用固定、可预测的排序。
-- [ ] 统一处理缺少图片、缺少营养字段、缺少翻译的情况。
-- [ ] 控制首页内容密度，不把未来模块全部提前放入首页。
-- [ ] 为 Brand、Product、Ingredient、Nutrition Topic、Guide 统一显示 draft/verified 状态。
-- [ ] 为静态内容增加关联完整性校验，覆盖 slug、brandId、ingredientId、topicId 和 related IDs。
-- [ ] 将内容校验错误与页面查询错误区分，避免查询层静默过滤缺失关联。
-- [ ] 收紧查询层接口，优先返回只读实体和只读列表，避免页面意外修改 canonical data。
-- [ ] 抽取组合查询，统一处理产品与品牌、Ingredient 与产品、Guide 与相关内容的关联。
-- [ ] 为 FoodType、life stage 等开放字段提供完整翻译或明确 fallback，避免新增数据出现空标签。
-- [ ] 评估 Nutrition Topic 与 Guide 的路由和领域边界，决定是否采用独立路径或统一 entry 类型。
+- [x] 将页面内容从组件 JSX 中移出，统一放入 `content` 或 `data` 层。
+- [x] 为静态数据添加基础校验，避免 slug、关联 ID 和必填字段错误。
+- [x] 确定列表排序规则，先使用固定、可预测的排序。
+- [x] 统一处理缺少图片、缺少营养字段、缺少翻译的情况。
+- [x] 控制首页内容密度，不把未来模块全部提前放入首页。
+- [x] 为 Brand、Product、Ingredient、Nutrition Topic、Guide 统一显示 draft/verified 状态。
+- [x] 为静态内容增加关联完整性校验，覆盖 slug、brandId、ingredientId、topicId 和 related IDs。
+- [x] 将内容校验错误与页面查询错误区分，避免查询层静默过滤缺失关联。
+- [x] 收紧查询层接口，优先返回只读实体和只读列表，避免页面意外修改 canonical data。
+- [x] 抽取组合查询，统一处理产品与品牌、Ingredient 与产品、Guide 与相关内容的关联。
+- [x] 为 FoodType、life stage 等开放字段提供完整翻译或明确 fallback，避免新增数据出现空标签。
+- [x] 评估 Nutrition Topic 与 Guide 的路由和领域边界，决定是否采用独立路径或统一 entry 类型。
 
 ### 完成条件
 

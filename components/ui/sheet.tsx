@@ -37,7 +37,9 @@ export function Sheet({ open, onOpenChange, title, closeLabel, children }: Sheet
     >
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between border-b border-border px-5 py-5">
-          <h2 id={titleId} className="font-display text-xl font-bold">{title}</h2>
+          <h2 id={titleId} className="font-display text-xl font-bold">
+            {title}
+          </h2>
           <button
             type="button"
             onClick={() => onOpenChange(false)}

@@ -88,12 +88,30 @@
     "related": "Contenu associé",
     "learnMore": "En savoir plus",
     "backToBrands": "Retour aux marques",
-    "backToProducts": "Retour aux produits"
+    "backToProducts": "Retour aux produits",
+    "empty": "Aucun contenu n’est encore disponible.",
+    "status": { "draft": "Fiche brouillon", "verified": "Vérifié" }
   },
   "Product": {
     "species": { "dog": "Chiens", "cat": "Chats" },
-    "foodType": { "dry": "Aliment sec", "wet": "Aliment humide" },
-    "lifeStages": { "all-life-stages": "Tous les stades de vie", "puppy": "Chiot", "adult": "Adulte", "senior": "Senior" },
+    "foodType": {
+      "dry": "Aliment sec",
+      "wet": "Aliment humide",
+      "raw": "Aliment cru",
+      "freeze-dried": "Aliment lyophilisé",
+      "air-dried": "Aliment séché à l’air",
+      "dehydrated": "Aliment déshydraté",
+      "fresh": "Aliment frais",
+      "treat": "Friandise",
+      "topper": "Garniture",
+      "other": "Autre"
+    },
+    "lifeStages": {
+      "all-life-stages": "Tous les stades de vie",
+      "puppy": "Chiot",
+      "adult": "Adulte",
+      "senior": "Senior"
+    },
     "factsTitle": "Analyse garantie",
     "nutrient": "Nutriment",
     "value": "Valeur",

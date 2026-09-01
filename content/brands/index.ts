@@ -25,7 +25,9 @@ export const brands: Brand[] = [
     },
     country: "Canada",
     status: "draft",
-    sources: [{ name: "FirstMate Pet Foods", url: "https://firstmate.com/", kind: "manufacturer", accessedAt: "2026-09-01" }],
+    sources: [
+      { name: "FirstMate Pet Foods", url: "https://firstmate.com/", kind: "manufacturer", accessedAt: "2026-09-01" },
+    ],
   },
   {
     id: "go-solutions",
@@ -38,6 +40,8 @@ export const brands: Brand[] = [
     },
     country: "Canada",
     status: "draft",
-    sources: [{ name: "GO! SOLUTIONS", url: "https://go-solutions.com/en-us/", kind: "manufacturer", accessedAt: "2026-09-01" }],
+    sources: [
+      { name: "GO! SOLUTIONS", url: "https://go-solutions.com/en-us/", kind: "manufacturer", accessedAt: "2026-09-01" },
+    ],
   },
 ];

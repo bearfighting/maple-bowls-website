@@ -32,7 +32,12 @@ export function MobileMenu({
       <Sheet open={open} onOpenChange={setOpen} title={title} closeLabel={closeLabel}>
         <nav aria-label={menuLabel} className="flex flex-col gap-1">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setOpen(false)} className="rounded-xl px-4 py-3 text-base font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="rounded-xl px-4 py-3 text-base font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
               {link.label}
             </Link>
           ))}

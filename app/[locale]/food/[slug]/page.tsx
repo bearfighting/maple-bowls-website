@@ -3,12 +3,12 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/navigation/breadcrumb";
 import { EditorialCallout } from "@/components/content/editorial-callout";
-import { IngredientList } from "@/components/content/ingredient-list";
-import { NutritionTable } from "@/components/content/nutrition-table";
+import { IngredientList } from "@/components/product/ingredient-list";
+import { NutritionTable } from "@/components/product/nutrition-table";
 import { RelatedContent } from "@/components/content/related-content";
 import { SourceList } from "@/components/content/source-list";
 import { SectionContainer } from "@/components/ui/section-container";
-import { getBrandById, getLocalizedText, getProductBySlug, getProducts } from "@/lib/content";
+import { getLocalizedText, getProductBySlug, getProductWithBrand, getProducts } from "@/lib/content";
 import { getLocaleOrNotFound } from "@/lib/locale";
 import { routing } from "@/i18n/routing";
 import type { FoodType, Species } from "@/lib/types";
@@ -32,8 +32,9 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
   const locale = getLocaleOrNotFound(rawLocale);
   const product = getProductBySlug(slug);
   if (!product) notFound();
-  const brand = getBrandById(product.brandId);
-  if (!brand) notFound();
+  const result = getProductWithBrand(slug);
+  if (!result) notFound();
+  const { brand, ingredients } = result;
   const t = await getTranslations("Content");
   const labels = await getTranslations("Product");
   const species = labels.raw("species") as Record<Species, string>;
@@ -48,35 +49,81 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
     lastVerified: labels("lastVerified"),
   };
   const related = [
-    ...product.ingredients.filter((item) => item.ingredientId).map((item) => ({ href: "/ingredients/" + item.ingredientId, label: getLocalizedText(item.name, locale) })),
+    ...ingredients
+      .filter((item) => item.ingredient)
+      .map((item) => ({
+        href: "/ingredients/" + item.ingredient!.slug,
+        label: getLocalizedText(item.item.name, locale),
+      })),
     { href: "/nutrition-guide", label: t("nutritionTitle") },
   ];
 
   return (
     <SectionContainer>
-      <Breadcrumb label={t("product")} items={[{ label: "Maple Bowl", href: "/" }, { label: t("foodTitle"), href: "/food" }, { label: getLocalizedText(product.name, locale) }]} />
-      <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">{getLocalizedText(brand.name, locale)}</p>
-      <h1 className="mt-3 max-w-4xl font-display text-4xl font-bold tracking-tight sm:text-5xl">{getLocalizedText(product.name, locale)}</h1>
-      <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">{getLocalizedText(product.description, locale)}</p>
+      <Breadcrumb
+        label={t("product")}
+        items={[
+          { label: "Maple Bowl", href: "/" },
+          { label: t("foodTitle"), href: "/food" },
+          { label: getLocalizedText(product.name, locale) },
+        ]}
+      />
+      <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">
+        {getLocalizedText(brand.name, locale)}
+      </p>
+      <h1 className="mt-3 max-w-4xl font-display text-4xl font-bold tracking-tight sm:text-5xl">
+        {getLocalizedText(product.name, locale)}
+      </h1>
+      <p className="mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">
+        {getLocalizedText(product.description, locale)}
+      </p>
       <div className="mt-6 flex flex-wrap gap-2 text-sm font-bold">
-        {product.species.map((item) => <span key={item} className="rounded-full bg-secondary px-3 py-1 text-secondary-foreground">{species[item]}</span>)}
-        <span className="rounded-full border border-border px-3 py-1">{foodType[product.foodType]}</span>
-        {product.lifeStages.map((stage) => <span key={stage} className="rounded-full border border-border px-3 py-1">{lifeStages[stage] ?? stage}</span>)}
+        {product.species.map((item) => (
+          <span key={item} className="rounded-full bg-secondary px-3 py-1 text-secondary-foreground">
+            {species[item]}
+          </span>
+        ))}
+        <span className="rounded-full border border-border px-3 py-1">
+          {foodType[product.foodType] ?? product.foodType}
+        </span>
+        {product.lifeStages.map((stage) => (
+          <span key={stage} className="rounded-full border border-border px-3 py-1">
+            {lifeStages[stage] ?? stage}
+          </span>
+        ))}
       </div>
       <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-10">
           <section>
             <h2 className="font-display text-2xl font-bold">{labels("factsTitle")}</h2>
-            <div className="mt-4"><NutritionTable facts={product.nutritionFacts} locale={locale} labels={{ nutrient: labels("nutrient"), value: labels("value"), qualifier: { minimum: labels("minimum"), maximum: labels("maximum"), typical: labels("typical") }, valueMissing: labels("valueMissing") }} /></div>
+            <div className="mt-4">
+              <NutritionTable
+                facts={product.nutritionFacts}
+                locale={locale}
+                labels={{
+                  nutrient: labels("nutrient"),
+                  value: labels("value"),
+                  qualifier: { minimum: labels("minimum"), maximum: labels("maximum"), typical: labels("typical") },
+                  valueMissing: labels("valueMissing"),
+                }}
+              />
+            </div>
           </section>
           <section>
             <h2 className="font-display text-2xl font-bold">{labels("ingredientsTitle")}</h2>
-            <div className="mt-4"><IngredientList ingredients={product.ingredients} locale={locale} unknownLabel={labels("noIngredients")} /></div>
+            <div className="mt-4">
+              <IngredientList ingredients={ingredients} locale={locale} unknownLabel={labels("noIngredients")} />
+            </div>
           </section>
           <RelatedContent title={t("related")} links={related} />
         </div>
         <div className="space-y-8">
-          <EditorialCallout title={labels("notesTitle")} body={product.mapleBowlNotes} locale={locale} draftLabel={product.status === "draft" ? labels("draft") : undefined} />
+          <EditorialCallout
+            title={labels("notesTitle")}
+            body={product.mapleBowlNotes}
+            locale={locale}
+            draftLabel={product.status === "draft" ? labels("draft") : undefined}
+          />
           <SourceList sources={product.sources} labels={sourceLabels} lastVerifiedAt={product.lastVerifiedAt} />
         </div>
       </div>

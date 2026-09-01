@@ -24,17 +24,16 @@ export async function ComingSoonPage({ section }: { section: ComingSoonSection }
 
   return (
     <SectionContainer className="flex min-h-[60vh] flex-col justify-center">
-      <Breadcrumb
-        label={t("breadcrumb")}
-        items={[{ label: t("home"), href: "/" }, { label }]}
-      />
+      <Breadcrumb label={t("breadcrumb")} items={[{ label: t("home"), href: "/" }, { label }]} />
       <div className="max-w-2xl">
         <Badge variant="secondary">{t("badge")}</Badge>
         <h1 className="mt-5 font-display text-4xl font-bold tracking-tight sm:text-5xl">
           {t("title", { section: label })}
         </h1>
         <p className="mt-5 max-w-xl text-lg leading-8 text-muted-foreground">{t("description")}</p>
-        <Link href="/" className={buttonVariants({ className: "mt-8" })}>{t("backHome")}</Link>
+        <Link href="/" className={buttonVariants({ className: "mt-8" })}>
+          {t("backHome")}
+        </Link>
       </div>
     </SectionContainer>
   );

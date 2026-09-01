@@ -88,11 +88,24 @@
     "related": "Related content",
     "learnMore": "Learn more",
     "backToBrands": "Back to brands",
-    "backToProducts": "Back to products"
+    "backToProducts": "Back to products",
+    "empty": "No content is available yet.",
+    "status": { "draft": "Draft record", "verified": "Verified" }
   },
   "Product": {
     "species": { "dog": "Dogs", "cat": "Cats" },
-    "foodType": { "dry": "Dry food", "wet": "Wet food" },
+    "foodType": {
+      "dry": "Dry food",
+      "wet": "Wet food",
+      "raw": "Raw food",
+      "freeze-dried": "Freeze-dried food",
+      "air-dried": "Air-dried food",
+      "dehydrated": "Dehydrated food",
+      "fresh": "Fresh food",
+      "treat": "Treat",
+      "topper": "Topper",
+      "other": "Other"
+    },
     "lifeStages": { "all-life-stages": "All life stages", "puppy": "Puppy", "adult": "Adult", "senior": "Senior" },
     "factsTitle": "Guaranteed analysis",
     "nutrient": "Nutrient",
