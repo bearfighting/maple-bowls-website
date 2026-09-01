@@ -23,6 +23,8 @@ import { getLocaleMetadata } from "@/lib/metadata";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return routing.locales.flatMap((locale) => [
     { locale, slug: "dog" },
@@ -43,6 +45,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       path: `/food/${slug}`,
       title: `${speciesLabels[slug]} · ${t("foodTitle")}`,
       description: t("foodDescription"),
+      noIndex: true,
     });
   }
   const product = getProductBySlug(slug);
@@ -52,6 +55,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     path: `/food/${slug}`,
     title: getLocalizedText(product.name, locale),
     description: getLocalizedText(product.description, locale),
+    noIndex: product.status === "draft",
   });
 }
 

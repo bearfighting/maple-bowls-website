@@ -14,7 +14,13 @@ import { getSearchDocuments } from "@/lib/search-repository";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const locale = getLocaleOrNotFound((await params).locale);
   const t = await getTranslations({ locale, namespace: "Search" });
-  return getLocaleMetadata({ locale, path: "/search", title: t("title"), description: t("description") });
+  return getLocaleMetadata({
+    locale,
+    path: "/search",
+    title: t("title"),
+    description: t("description"),
+    noIndex: true,
+  });
 }
 
 export default async function SearchPage({

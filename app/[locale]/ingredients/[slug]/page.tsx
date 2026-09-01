@@ -13,6 +13,8 @@ import { routing } from "@/i18n/routing";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return routing.locales.flatMap((locale) => getIngredients().map((ingredient) => ({ locale, slug: ingredient.slug })));
 }
@@ -28,6 +30,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     path: `/ingredients/${slug}`,
     title: getLocalizedText(ingredient.name, locale),
     description: getLocalizedText(ingredient.description, locale),
+    noIndex: ingredient.status === "draft",
   });
 }
 

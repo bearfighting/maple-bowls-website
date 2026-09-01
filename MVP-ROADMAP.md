@@ -303,52 +303,52 @@ MDX、数据库、外部搜索服务或搜索分析。
 
 ### Checklist：响应式和可访问性
 
-- [ ] 检查 375px、768px、1024px、1440px 等关键宽度。
-- [ ] 检查长英文产品名、长法语标签和中文段落。
-- [ ] 检查营养表、配料表和筛选器的移动端表现。
-- [ ] 所有交互控件支持键盘操作。
-- [ ] 所有图像有合适的 alt 或标记为 decorative。
-- [ ] 检查 focus 状态、颜色对比度和触控目标尺寸。
-- [ ] 检查 reduced-motion 行为。
-- [ ] 检查页面 heading 层级和 landmark 结构。
+- [x] 检查 375px、768px、1024px、1440px 等关键宽度。
+- [x] 检查长英文产品名、长法语标签和中文段落。
+- [x] 检查营养表、配料表和筛选器的移动端表现。
+- [x] 所有交互控件支持键盘操作。
+- [x] 所有图像有合适的 alt 或标记为 decorative。
+- [x] 检查 focus 状态、颜色对比度和触控目标尺寸。
+- [x] 检查 reduced-motion 行为。
+- [x] 检查页面 heading 层级和 landmark 结构。
 
 ### Checklist：SEO 和元数据
 
-- [ ] 每个核心页面有唯一 title 和 description。
-- [ ] 实现 sitemap。
-- [ ] 实现 robots 配置。
-- [ ] 实现 canonical 和已发布语言的 alternate links。
-- [ ] 检查 Open Graph / 分享卡片。
-- [ ] 检查 Breadcrumb、Article 等适用的结构化数据。
-- [ ] 确认未翻译或不完整页面是否应该被索引。
-- [ ] 检查所有内部链接和不存在的 slug。
+- [x] 每个核心页面有唯一 title 和 description。
+- [x] 实现 sitemap。
+- [x] 实现 robots 配置。
+- [x] 实现 canonical 和已发布语言的 alternate links。
+- [x] 检查 Open Graph / 分享卡片。
+- [x] 检查 Breadcrumb、Article 等适用的结构化数据。
+- [x] 确认未翻译或不完整页面是否应该被索引。
+- [x] 检查所有内部链接和不存在的 slug。
 
 ### Checklist：内容可信度
 
-- [ ] 每个产品页面标出数据来源和最后核验时间。
-- [ ] 区分 manufacturer facts、Maple Bowl notes 和 editorial content。
-- [ ] 避免未经支持的健康、疾病和“最佳产品”表达。
-- [ ] About / Methodology / Privacy 页面内容可读且不是占位文本。
-- [ ] 明确产品图片、品牌 logo 和包装图的使用授权或来源。
-- [ ] 补充联系/纠错入口，即使暂时只使用普通邮件链接。
+- [x] 每个产品页面标出数据来源和最后核验时间。
+- [x] 区分 manufacturer facts、Maple Bowl notes 和 editorial content。
+- [x] 避免未经支持的健康、疾病和“最佳产品”表达。
+- [x] About / Methodology / Privacy 页面内容可读且不是占位文本。
+- [ ] 明确产品图片、品牌 logo 和包装图的使用授权或来源。（来源已记录，授权待项目方确认。）
+- [ ] 补充联系/纠错入口，即使暂时只使用普通邮件链接。（代码已支持，正式邮箱待部署配置。）
 
 ### Checklist：工程和发布
 
-- [ ] production build 成功。
-- [ ] typecheck、lint、基本页面测试成功。
-- [ ] 检查图片尺寸、压缩和 loading 行为。
-- [ ] 检查环境变量和部署配置。
-- [ ] 配置基础错误监控或至少保留可追踪的错误日志。
-- [ ] 确认 404、错误边界和空状态不会泄露开发信息。
-- [ ] 在目标部署环境验证 locale 路由、静态资源和 metadata。
-- [ ] 做一次从首页到产品页的真实用户走查。
+- [x] production build 成功。
+- [x] typecheck、lint、基本页面测试成功。
+- [x] 检查图片尺寸、压缩和 loading 行为。
+- [ ] 检查环境变量和部署配置。（待正式部署环境配置。）
+- [x] 配置基础错误监控或至少保留可追踪的错误日志。
+- [x] 确认 404、错误边界和空状态不会泄露开发信息。
+- [ ] 在目标部署环境验证 locale 路由、静态资源和 metadata。（待部署后验证。）
+- [ ] 做一次从首页到产品页的真实用户走查。（代码路径已验证，正式用户走查待完成。）
 
 ### 完成条件
 
-- [ ] 新用户能独立完成 Definition of Success 中的 8 项核心任务。
-- [ ] EN / FR / ZH 核心流程没有阻塞性问题。
-- [ ] 移动端没有明显横向溢出或不可操作控件。
-- [ ] 生产构建、核心页面、基础 SEO 和无障碍检查通过。
+- [ ] 新用户能独立完成 Definition of Success 中的 8 项核心任务。（待正式用户走查。）
+- [x] EN / FR / ZH 核心流程没有阻塞性问题。
+- [ ] 移动端没有明显横向溢出或不可操作控件。（待真实设备/浏览器走查。）
+- [ ] 生产构建、核心页面、基础 SEO 和无障碍检查通过。（自动检查已通过，人工验收待完成。）
 
 ## 3. 推荐执行顺序
 
@@ -397,3 +397,10 @@ MVP 验证通过后，再考虑：
 - 增加合作、Affiliate 或其他商业模块。
 
 这些能力应建立在 MVP 已验证的实体关系、页面模板和用户行为之上。
+
+### M6 实施记录
+
+M6 保持静态 TypeScript 内容和无外部监控依赖。`NEXT_PUBLIC_SITE_URL` 与
+`NEXT_PUBLIC_CONTACT_EMAIL` 是部署前配置项；搜索页和未完成的 Coming Soon
+页面不进入索引。metadata 缺失翻译继续遵循当前 locale → zh → en → fr
+的 fallback。品牌图片的来源与使用授权仍需在正式上线前由项目方确认。
