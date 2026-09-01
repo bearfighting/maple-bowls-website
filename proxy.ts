@@ -12,12 +12,15 @@ function negotiatedLocale(request: NextRequest) {
   }
 
   const accepted = request.headers.get("accept-language")?.toLowerCase() ?? "";
-  const languages = accepted.split(",").map((part, index) => {
-    const [range, ...parameters] = part.trim().split(";");
-    const quality = parameters.find((parameter) => parameter.trim().startsWith("q="));
-    const q = quality ? Number.parseFloat(quality.trim().slice(2)) : 1;
-    return { range, q: Number.isNaN(q) ? 0 : q, index };
-  }).filter((language) => language.range && language.q > 0)
+  const languages = accepted
+    .split(",")
+    .map((part, index) => {
+      const [range, ...parameters] = part.trim().split(";");
+      const quality = parameters.find((parameter) => parameter.trim().startsWith("q="));
+      const q = quality ? Number.parseFloat(quality.trim().slice(2)) : 1;
+      return { range, q: Number.isNaN(q) ? 0 : q, index };
+    })
+    .filter((language) => language.range && language.q > 0)
     .sort((a, b) => b.q - a.q || a.index - b.index);
 
   for (const language of languages) {
@@ -34,9 +37,7 @@ function isLocale(value: string): value is Locale {
 
 export default function proxy(request: NextRequest) {
   if (request.nextUrl.pathname === "/") {
-    return NextResponse.redirect(
-      new URL(`/${negotiatedLocale(request)}`, request.url),
-    );
+    return NextResponse.redirect(new URL(`/${negotiatedLocale(request)}`, request.url));
   }
 
   const response = handleI18n(request);

@@ -6,30 +6,23 @@ export type PetPreference = "dog" | "cat" | "both" | "unset";
 
 export type ContentStatus = "draft" | "verified";
 
+export type LifeStage = "all-life-stages" | "puppy" | "adult" | "senior";
+
 export type FoodType =
-  | "dry"
-  | "wet"
-  | "raw"
-  | "freeze-dried"
-  | "air-dried"
-  | "dehydrated"
-  | "fresh"
-  | "treat"
-  | "topper"
-  | "other";
+  "dry" | "wet" | "raw" | "freeze-dried" | "air-dried" | "dehydrated" | "fresh" | "treat" | "topper" | "other";
 
 export type Source = {
-  name: string;
-  url: string;
-  kind: "manufacturer" | "official" | "editorial";
-  accessedAt?: string;
+  readonly name: string;
+  readonly url: string;
+  readonly kind: "manufacturer" | "official" | "editorial";
+  readonly accessedAt?: string;
 };
 
 export type NutritionFact = {
-  label: LocalizedText;
-  value?: string;
-  qualifier?: "minimum" | "maximum" | "typical";
-  unit?: string;
+  readonly label: LocalizedText;
+  readonly value?: string;
+  readonly qualifier?: "minimum" | "maximum" | "typical";
+  readonly unit?: string;
 };
 
 export type Brand = {
@@ -39,7 +32,7 @@ export type Brand = {
   description: LocalizedText;
   country?: string;
   logo?: string;
-  sources: Source[];
+  readonly sources: ReadonlyArray<Source>;
   status: ContentStatus;
 };
 
@@ -53,14 +46,14 @@ export type Product = {
   slug: string;
   brandId: string;
   name: LocalizedText;
-  species: Species[];
+  readonly species: ReadonlyArray<Species>;
   foodType: FoodType;
-  lifeStages: string[];
+  readonly lifeStages: ReadonlyArray<LifeStage>;
   description: LocalizedText;
   image?: string;
-  ingredients: ProductIngredient[];
-  nutritionFacts: NutritionFact[];
-  sources: Source[];
+  readonly ingredients: ReadonlyArray<ProductIngredient>;
+  readonly nutritionFacts: ReadonlyArray<NutritionFact>;
+  readonly sources: ReadonlyArray<Source>;
   mapleBowlNotes?: LocalizedText;
   lastVerifiedAt?: string;
   status: ContentStatus;
@@ -70,10 +63,10 @@ export type Ingredient = {
   id: string;
   slug: string;
   name: LocalizedText;
-  aliases: string[];
+  readonly aliases: ReadonlyArray<string>;
   category?: string;
   description: LocalizedText;
-  sources: Source[];
+  readonly sources: ReadonlyArray<Source>;
   status: ContentStatus;
 };
 
@@ -82,8 +75,9 @@ export type NutritionTopic = {
   slug: string;
   title: LocalizedText;
   summary: LocalizedText;
-  speciesScope: Species[] | "both";
-  sources: Source[];
+  body: LocalizedText;
+  readonly speciesScope: ReadonlyArray<Species> | "both";
+  readonly sources: ReadonlyArray<Source>;
   status: ContentStatus;
 };
 
@@ -94,9 +88,9 @@ export type Guide = {
   summary: LocalizedText;
   body: LocalizedText;
   topicId?: string;
-  relatedProductIds: string[];
-  relatedIngredientIds: string[];
-  sources: Source[];
+  readonly relatedProductIds: ReadonlyArray<string>;
+  readonly relatedIngredientIds: ReadonlyArray<string>;
+  readonly sources: ReadonlyArray<Source>;
   status: ContentStatus;
 };
 

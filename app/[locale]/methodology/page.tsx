@@ -1,2 +1,4 @@
 import { ComingSoonPage } from "@/components/content/coming-soon-page";
-export default function MethodologyPage() { return <ComingSoonPage section="methodology" />; }
+export default function MethodologyPage() {
+  return <ComingSoonPage section="methodology" />;
+}

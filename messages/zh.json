@@ -88,11 +88,24 @@
     "related": "相关内容",
     "learnMore": "了解更多",
     "backToBrands": "返回品牌",
-    "backToProducts": "返回产品"
+    "backToProducts": "返回产品",
+    "empty": "暂时还没有可用内容。",
+    "status": { "draft": "草稿记录", "verified": "已核验" }
   },
   "Product": {
     "species": { "dog": "狗狗", "cat": "猫咪" },
-    "foodType": { "dry": "干粮", "wet": "湿粮" },
+    "foodType": {
+      "dry": "干粮",
+      "wet": "湿粮",
+      "raw": "生食",
+      "freeze-dried": "冻干",
+      "air-dried": "风干粮",
+      "dehydrated": "脱水粮",
+      "fresh": "鲜食",
+      "treat": "零食",
+      "topper": "拌粮",
+      "other": "其他"
+    },
     "lifeStages": { "all-life-stages": "所有生命周期", "puppy": "幼犬", "adult": "成犬", "senior": "老年犬" },
     "factsTitle": "保证分析",
     "nutrient": "营养项目",

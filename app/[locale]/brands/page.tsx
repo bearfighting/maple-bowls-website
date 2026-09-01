@@ -17,17 +17,28 @@ export default async function BrandsPage({ params }: { params: Promise<{ locale:
   const locale = getLocaleOrNotFound((await params).locale);
   const t = await getTranslations("Content");
   const navigation = await getTranslations("Navigation");
+  const labels = await getTranslations("Content");
   const items = getBrands();
+  const statusLabels = labels.raw("status") as Record<"draft" | "verified", string>;
 
   return (
     <SectionContainer>
-      <Breadcrumb label={navigation("primary")} items={[{ label: navigation("home"), href: "/" }, { label: t("brandsTitle") }]} />
+      <Breadcrumb
+        label={navigation("primary")}
+        items={[{ label: navigation("home"), href: "/" }, { label: t("brandsTitle") }]}
+      />
       <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">{t("brand")}</p>
       <h1 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">{t("brandsTitle")}</h1>
       <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{t("brandsDescription")}</p>
-      <div className="mt-10 grid gap-5 md:grid-cols-3">
-        {items.map((brand) => <BrandCard key={brand.id} brand={brand} locale={locale} />)}
-      </div>
+      {items.length > 0 ? (
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          {items.map((brand) => (
+            <BrandCard key={brand.id} brand={brand} locale={locale} statusLabels={statusLabels} />
+          ))}
+        </div>
+      ) : (
+        <p className="mt-10 rounded-xl bg-muted p-4 text-sm text-muted-foreground">{t("empty")}</p>
+      )}
     </SectionContainer>
   );
 }

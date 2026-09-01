@@ -12,7 +12,14 @@ export const ingredients: Ingredient[] = [
       en: "A rendered salmon ingredient with much of its water removed. Its composition depends on the source and processing.",
       fr: "Un ingrédient de saumon transformé dont une grande partie de l’eau a été retirée.",
     },
-    sources: [{ name: "GO! SOLUTIONS product page", url: "https://go-solutions.com/en/dog-food/dry/digestion-gut-health-salmon-recipe-with-ancient-grains", kind: "manufacturer", accessedAt: "2026-09-01" }],
+    sources: [
+      {
+        name: "GO! SOLUTIONS product page",
+        url: "https://go-solutions.com/en/dog-food/dry/digestion-gut-health-salmon-recipe-with-ancient-grains",
+        kind: "manufacturer",
+        accessedAt: "2026-09-01",
+      },
+    ],
     status: "draft",
   },
   {
@@ -26,7 +33,14 @@ export const ingredients: Ingredient[] = [
       en: "An animal ingredient commonly used in pet food recipes. Read it alongside the full product information.",
       fr: "Un ingrédient d’origine animale courant dans les recettes pour animaux.",
     },
-    sources: [{ name: "FirstMate product page", url: "https://firstmate.com/product/free-run-chicken-formula-for-dogs/", kind: "manufacturer", accessedAt: "2026-09-01" }],
+    sources: [
+      {
+        name: "FirstMate product page",
+        url: "https://firstmate.com/product/free-run-chicken-formula-for-dogs/",
+        kind: "manufacturer",
+        accessedAt: "2026-09-01",
+      },
+    ],
     status: "draft",
   },
   {
@@ -40,7 +54,14 @@ export const ingredients: Ingredient[] = [
       en: "A grain ingredient whose role and amount should be considered in the context of the complete recipe.",
       fr: "Un ingrédient céréalier à interpréter dans le contexte de la recette complète.",
     },
-    sources: [{ name: "GO! SOLUTIONS product page", url: "https://go-solutions.com/en/dog-food/dry/digestion-gut-health-salmon-recipe-with-ancient-grains", kind: "manufacturer", accessedAt: "2026-09-01" }],
+    sources: [
+      {
+        name: "GO! SOLUTIONS product page",
+        url: "https://go-solutions.com/en/dog-food/dry/digestion-gut-health-salmon-recipe-with-ancient-grains",
+        kind: "manufacturer",
+        accessedAt: "2026-09-01",
+      },
+    ],
     status: "draft",
   },
   {
@@ -54,7 +75,14 @@ export const ingredients: Ingredient[] = [
       en: "A grain ingredient. A single ingredient cannot determine whether a complete diet suits an individual pet.",
       fr: "Un ingrédient céréalier qui ne suffit pas à déterminer si une alimentation convient à un animal.",
     },
-    sources: [{ name: "Open Farm product page", url: "https://openfarmpet.com/products/goodbowl-grass-fed-beef-brown-rice-recipe-for-dogs", kind: "manufacturer", accessedAt: "2026-09-01" }],
+    sources: [
+      {
+        name: "Open Farm product page",
+        url: "https://openfarmpet.com/products/goodbowl-grass-fed-beef-brown-rice-recipe-for-dogs",
+        kind: "manufacturer",
+        accessedAt: "2026-09-01",
+      },
+    ],
     status: "draft",
   },
   {
@@ -68,7 +96,14 @@ export const ingredients: Ingredient[] = [
       en: "A starchy plant ingredient whose meaning depends on the full recipe and product context.",
       fr: "Un ingrédient végétal riche en amidon à considérer dans le contexte de la recette complète.",
     },
-    sources: [{ name: "FirstMate product page", url: "https://firstmate.com/product/free-run-chicken-formula-for-dogs/", kind: "manufacturer", accessedAt: "2026-09-01" }],
+    sources: [
+      {
+        name: "FirstMate product page",
+        url: "https://firstmate.com/product/free-run-chicken-formula-for-dogs/",
+        kind: "manufacturer",
+        accessedAt: "2026-09-01",
+      },
+    ],
     status: "draft",
   },
 ];
