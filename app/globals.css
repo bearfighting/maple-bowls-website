@@ -54,8 +54,8 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
-  --font-sans: var(--font-nunito);
-  --font-display: var(--font-baloo);
+  --font-sans: "Nunito Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Baloo 2", "Nunito Sans", "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -84,7 +84,7 @@
 }
 
 body {
-  font-family: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-sans);
 }
 
 * {

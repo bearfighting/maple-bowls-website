@@ -122,24 +122,24 @@ Favicon      现有 favicon.png
 
 ### Checklist
 
-- [ ] 实现 Maple Bowl Logo/wordmark 组件。
-- [ ] 实现全局 `SiteHeader`。
-- [ ] 实现桌面导航：Nutrition Guide、Product Reviews、Brands、Recipes、Videos、Tools。
-- [ ] 实现移动端 Header 和 Sheet 菜单。
-- [ ] 实现 Footer，包含 About、Methodology、Privacy 和 locale 入口。
-- [ ] 实现 Breadcrumb。
-- [ ] 实现 Language Switcher，并保留当前页面概念路径。
-- [ ] 实现基础 Link、Button、Card、Badge、Section Container。
-- [ ] 处理 404 和基础错误页面的品牌样式。
-- [ ] 为 Header、Footer、Sheet、Dropdown 添加键盘焦点和 aria 标签。
+- [x] 实现 Maple Bowl Logo/wordmark 组件。
+- [x] 实现全局 `SiteHeader`。
+- [x] 实现桌面导航：Nutrition Guide、Product Reviews、Brands、Recipes、Videos、Tools。
+- [x] 实现移动端 Header 和 Sheet 菜单。
+- [x] 实现 Footer，包含 About、Methodology、Privacy 和 locale 入口。
+- [x] 实现 Breadcrumb。
+- [x] 实现 Language Switcher，并保留当前页面概念路径。
+- [x] 实现基础 Link、Button、Card、Badge、Section Container。
+- [x] 处理 404 和基础错误页面的品牌样式。
+- [x] 为 Header、Footer、Sheet、Dropdown 添加键盘焦点和 aria 标签。
 
 ### 完成条件
 
-- [ ] 任意 locale 下都能访问首页和主要导航入口。
-- [ ] 桌面和移动端导航均可操作。
-- [ ] 法语较长菜单项不会溢出。
-- [ ] 中文导航、行高和按钮布局正常。
-- [ ] 页面不存在时显示可理解的 404 页面，而不是空白或异常堆栈。
+- [x] 任意 locale 下都能访问首页和主要导航入口。
+- [x] 桌面和移动端导航均可操作。
+- [x] 法语较长菜单项不会溢出。
+- [x] 中文导航、行高和按钮布局正常。
+- [x] 页面不存在时显示可理解的 404 页面，而不是空白或异常堆栈。
 
 ## M2 — 完整垂直切片
 

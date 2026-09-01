@@ -21,7 +21,7 @@ export function LanguageSwitcher({ currentLocale, ariaLabel }: { currentLocale: 
           href={pathname}
           locale={locale.value}
           aria-current={currentLocale === locale.value ? "page" : undefined}
-          className={`rounded-full px-2.5 py-1.5 text-xs font-bold transition-colors ${
+          className={`rounded-full px-2.5 py-1.5 text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
             currentLocale === locale.value
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:bg-muted hover:text-foreground"

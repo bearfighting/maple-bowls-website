@@ -13,7 +13,9 @@
     "language": "Language",
     "home": "Maple Bowl home",
     "primary": "Primary navigation",
-    "menu": "Open menu"
+    "menu": "Open menu",
+    "menuTitle": "Menu",
+    "closeMenu": "Close menu"
   },
   "Home": {
     "eyebrow": "Canadian perspective · Trusted information",
@@ -41,7 +43,28 @@
     "copyright": "© Maple Bowl. All rights reserved.",
     "about": "About",
     "methodology": "Methodology",
-    "privacy": "Privacy"
+    "privacy": "Privacy",
+    "language": "Language"
+  },
+  "ComingSoon": {
+    "badge": "Coming soon",
+    "title": "{section} is coming soon",
+    "description": "We are preparing thoughtful, practical content for this part of Maple Bowl. Check back soon for a calmer way to learn and explore.",
+    "backHome": "Back home",
+    "home": "Home",
+    "breadcrumb": "Breadcrumb",
+    "sections": {
+      "nutritionGuide": "Nutrition Guide",
+      "reviews": "Product Reviews",
+      "brands": "Brands",
+      "recipes": "Recipes",
+      "videos": "Videos",
+      "tools": "Tools",
+      "search": "Search",
+      "about": "About",
+      "methodology": "Methodology",
+      "privacy": "Privacy"
+    }
   },
   "Error": {
     "title": "Something went wrong",

@@ -22,13 +22,13 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
         <Logo homeLabel={t("home")} />
         <nav aria-label={t("primary")} className="hidden items-center gap-5 lg:flex">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="text-sm font-semibold text-foreground/80 transition-colors hover:text-primary">
+            <Link key={link.href} href={link.href} className="rounded-sm text-sm font-semibold text-foreground/80 transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
               {link.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <MobileMenu menuLabel={t("menu")} links={links} />
+          <MobileMenu menuLabel={t("menu")} title={t("menuTitle")} closeLabel={t("closeMenu")} links={links} />
           <LanguageSwitcher currentLocale={locale} ariaLabel={t("language")} />
         </div>
       </div>
