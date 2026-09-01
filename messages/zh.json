@@ -69,5 +69,56 @@
   "Error": {
     "title": "页面出现问题",
     "retry": "再试一次"
+  },
+  "Content": {
+    "brandsTitle": "品牌",
+    "brandsDescription": "从加拿大视角了解宠物食品品牌。",
+    "brand": "品牌",
+    "productsTitle": "产品",
+    "productsDescription": "用一组小型产品记录开始学习和比较。",
+    "product": "产品",
+    "foodTitle": "宠物食品",
+    "foodDescription": "浏览一组基础宠物食品记录。",
+    "ingredientsTitle": "配料",
+    "ingredient": "配料",
+    "nutritionTitle": "营养指南",
+    "nutritionDescription": "从实用的方法开始阅读宠物食品信息。",
+    "guide": "指南",
+    "topic": "主题",
+    "related": "相关内容",
+    "learnMore": "了解更多",
+    "backToBrands": "返回品牌",
+    "backToProducts": "返回产品"
+  },
+  "Product": {
+    "species": { "dog": "狗狗", "cat": "猫咪" },
+    "foodType": { "dry": "干粮", "wet": "湿粮" },
+    "lifeStages": { "all-life-stages": "所有生命周期", "puppy": "幼犬", "adult": "成犬", "senior": "老年犬" },
+    "factsTitle": "保证分析",
+    "nutrient": "营养项目",
+    "value": "数值",
+    "minimum": "最低",
+    "maximum": "最高",
+    "typical": "通常",
+    "ingredientsTitle": "已选配料",
+    "noIngredients": "暂时没有可用的配料详情。",
+    "sourcesTitle": "来源",
+    "manufacturer": "制造商",
+    "official": "官方",
+    "editorial": "编辑内容",
+    "accessed": "访问于",
+    "lastVerified": "最后核验",
+    "notesTitle": "Maple Bowl 说明",
+    "draft": "草稿记录",
+    "valueMissing": "当前记录中没有提供"
+  },
+  "Ingredient": {
+    "aliases": "也称为",
+    "usedIn": "出现在这些产品中",
+    "noProducts": "暂时没有相关产品。"
+  },
+  "Guide": {
+    "sourcesTitle": "来源",
+    "bodyLabel": "关于这篇指南"
   }
 }

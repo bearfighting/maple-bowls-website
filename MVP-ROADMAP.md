@@ -161,26 +161,26 @@ Home → Brand → Product → Ingredient → Nutrition Guide
 
 ### Checklist
 
-- [ ] 定义静态数据 schema 和示例数据。
-- [ ] 实现 Home 页面。
-- [ ] 实现 Brand 详情页。
-- [ ] 实现 Product 详情页。
-- [ ] 实现 Ingredient 详情页。
-- [ ] 实现 Nutrition Topic 页面。
-- [ ] 实现 Guide / Article 页面。
-- [ ] 实现 Product Card、Brand Card、Article Card。
-- [ ] 实现 Nutrition Facts Table，支持 min/max、单位和缺失值。
-- [ ] 实现 Ingredient List，并支持链接到已知 Ingredient 页面。
-- [ ] 实现 Source List、Last Verified 和 Maple Bowl Notes 区域。
-- [ ] 在页面之间建立人工维护的相关链接。
-- [ ] 产品事实、来源和编辑说明使用明显不同的视觉层级。
+- [x] 定义静态数据 schema 和示例数据。
+- [x] 实现 Home 页面。
+- [x] 实现 Brand 详情页。
+- [x] 实现 Product 详情页。
+- [x] 实现 Ingredient 详情页。
+- [x] 实现 Nutrition Topic 页面。
+- [x] 实现 Guide / Article 页面。
+- [x] 实现 Product Card、Brand Card、Article Card。
+- [x] 实现 Nutrition Facts Table，支持 min/max、单位和缺失值。
+- [x] 实现 Ingredient List，并支持链接到已知 Ingredient 页面。
+- [x] 实现 Source List、Last Verified 和 Maple Bowl Notes 区域。
+- [x] 在页面之间建立人工维护的相关链接。
+- [x] 产品事实、来源和编辑说明使用明显不同的视觉层级。
 
 ### 完成条件
 
-- [ ] 从首页开始，不依赖浏览器后退，也能完成整条内容链路。
-- [ ] 不同产品的数据缺失不会导致页面结构损坏。
-- [ ] 产品页在 375px 左右宽度下可读，无横向溢出。
-- [ ] 页面不是单纯的占位卡片，至少使用一组真实产品内容验证布局。
+- [x] 从首页开始，不依赖浏览器后退，也能完成整条内容链路。
+- [x] 不同产品的数据缺失不会导致页面结构损坏。
+- [x] 产品页在 375px 左右宽度下可读，无横向溢出。
+- [x] 页面不是单纯的占位卡片，至少使用一组真实产品内容验证布局。
 
 ## M3 — 页面模板和静态内容系统
 
@@ -202,6 +202,13 @@ Home → Brand → Product → Ingredient → Nutrition Guide
 - [ ] 确定列表排序规则，先使用固定、可预测的排序。
 - [ ] 统一处理缺少图片、缺少营养字段、缺少翻译的情况。
 - [ ] 控制首页内容密度，不把未来模块全部提前放入首页。
+- [ ] 为 Brand、Product、Ingredient、Nutrition Topic、Guide 统一显示 draft/verified 状态。
+- [ ] 为静态内容增加关联完整性校验，覆盖 slug、brandId、ingredientId、topicId 和 related IDs。
+- [ ] 将内容校验错误与页面查询错误区分，避免查询层静默过滤缺失关联。
+- [ ] 收紧查询层接口，优先返回只读实体和只读列表，避免页面意外修改 canonical data。
+- [ ] 抽取组合查询，统一处理产品与品牌、Ingredient 与产品、Guide 与相关内容的关联。
+- [ ] 为 FoodType、life stage 等开放字段提供完整翻译或明确 fallback，避免新增数据出现空标签。
+- [ ] 评估 Nutrition Topic 与 Guide 的路由和领域边界，决定是否采用独立路径或统一 entry 类型。
 
 ### 完成条件
 
@@ -209,6 +216,9 @@ Home → Brand → Product → Ingredient → Nutrition Guide
 - [ ] 目录、详情页和关联链接使用同一套实体数据。
 - [ ] 空数据和无结果状态有明确文案和返回路径。
 - [ ] 页面层没有大段重复的产品/品牌展示逻辑。
+- [ ] 内容关联错误能在校验阶段被定位，不会在页面渲染时静默丢失。
+- [ ] 新增内容只需更新数据和必要的校验，不需要复制关联拼装逻辑。
+- [ ] 所有 draft 内容在页面上有清晰状态提示，开放字段不会产生空白 UI 标签。
 
 ## M4 — 多语言和轻量偏好
 
