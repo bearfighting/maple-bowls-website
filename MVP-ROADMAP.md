@@ -95,24 +95,25 @@ Favicon      现有 favicon.png
 
 ### Checklist
 
-- [ ] 确认 Next.js App Router 结构。
-- [ ] 创建 `app/[locale]/` 路由骨架。
-- [ ] 配置 TypeScript、Tailwind、shadcn/ui 和项目 alias。
+- [x] 确认 Next.js App Router 结构。
+- [x] 创建 `app/[locale]/` 路由骨架。
+- [x] 配置 TypeScript、Tailwind、shadcn/ui 和项目 alias。
 - [ ] 建立基础目录：`components/ui`、`components/brand`、`components/navigation`、`components/product`、`components/content`、`lib`、`content`。
-- [ ] 定义 `Locale`、`PetPreference`、`Species`、`FoodType` 等基础类型。
-- [ ] 安装并配置 `next-intl`，建立 `messages/en.json`、`messages/fr.json`、`messages/zh.json`。
-- [ ] 明确 `next-intl` 管理 UI 文案，产品/品牌/Ingredient/文章翻译由静态领域数据管理。
-- [ ] 建立 semantic theme tokens，并按 `ui-design.md` 映射品牌颜色。
+- [x] 定义 `Locale`、`PetPreference`、`Species`、`FoodType` 等基础类型。
+- [x] 安装并配置 `next-intl`，建立 `messages/en.json`、`messages/fr.json`、`messages/zh.json`。
+- [x] 明确 `next-intl` 管理 UI 文案，产品/品牌/Ingredient/文章翻译由静态领域数据管理。
+- [x] 建立 semantic theme tokens，并按 `ui-design.md` 映射品牌颜色。
 - [ ] 确定字体和 `next/font` 加载方式。
-- [ ] 添加基础 lint、format 和 typecheck 命令。
-- [ ] 写出当前 MVP 的页面清单和延后清单。
+- [x] 添加基础 lint 和 typecheck 命令。
+- [ ] 添加 format 命令。
+- [x] 写出当前 MVP 的页面清单和延后清单。
 
 ### 完成条件
 
-- [ ] 本地可以启动项目。
-- [ ] `/en`、`/fr`、`/zh` 至少能渲染独立 locale 页面。
-- [ ] 主题、字体和基础 Button/Card/Badge 能正常使用。
-- [ ] 不再需要通过修改页面代码来切换 locale。
+- [x] 本地可以启动项目。
+- [x] `/en`、`/fr`、`/zh` 至少能渲染独立 locale 页面。
+- [x] 主题、字体和基础 Button/Card/Badge 能正常使用。
+- [x] 不再需要通过修改页面代码来切换 locale。
 
 ## M1 — 品牌壳和全局导航
 
