@@ -15,6 +15,7 @@ import {
   getTopicWithRelatedGuides,
 } from "@/lib/content";
 import { getLocaleOrNotFound } from "@/lib/locale";
+import { getLocaleMetadata } from "@/lib/metadata";
 import { routing } from "@/i18n/routing";
 
 type Params = Promise<{ locale: string; slug: string }>;
@@ -31,10 +32,13 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!entry) notFound();
   const title = entry.kind === "guide" ? entry.guide.title : entry.topic.title;
   const summary = entry.kind === "guide" ? entry.guide.summary : entry.topic.summary;
-  return {
+  return getLocaleMetadata({
+    locale,
+    path: `/nutrition-guide/${slug}`,
     title: getLocalizedText(title, locale),
     description: getLocalizedText(summary, locale),
-  };
+    type: "article",
+  });
 }
 
 export default async function GuideDetailPage({ params }: { params: Params }) {

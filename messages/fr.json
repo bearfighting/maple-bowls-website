@@ -138,5 +138,39 @@
   "Guide": {
     "sourcesTitle": "Sources",
     "bodyLabel": "À propos de ce guide"
+  },
+  "Filter": {
+    "title": "Filtrer les aliments",
+    "all": "Tous",
+    "species": "Animal",
+    "foodType": "Type d’aliment",
+    "lifeStage": "Étape de vie",
+    "clear": "Effacer les filtres",
+    "showing": "{count} produits affichés"
+  },
+  "PetPreference": {
+    "welcome": "Bienvenue chez Maple Bowl",
+    "change": "Préférence d’animal",
+    "close": "Fermer les préférences",
+    "question": "Pour qui souhaitons-nous afficher le contenu en priorité ?",
+    "skip": "Passer pour le moment",
+    "changeLater": "Vous pourrez modifier ce choix à tout moment.",
+    "options": {
+      "dog": { "title": "Chiens", "short": "Chiens", "description": "Prioriser les aliments et conseils pour chiens." },
+      "cat": { "title": "Chats", "short": "Chats", "description": "Prioriser les aliments et conseils pour chats." },
+      "both": {
+        "title": "J’ai les deux",
+        "short": "Chiens + chats",
+        "description": "Garder un équilibre entre les deux contenus."
+      },
+      "unset": { "title": "Passer", "short": "Tous les animaux", "description": "" }
+    }
+  },
+  "Privacy": {
+    "title": "Confidentialité",
+    "description": "Comment Maple Bowl traite la petite quantité d’informations utilisée par ce site.",
+    "petCookieTitle": "Préférence fonctionnelle pour l’animal",
+    "petCookieBody": "Maple Bowl peut enregistrer votre préférence pour les chiens ou les chats dans le cookie maple_paws_pet. Il ne crée pas de compte et ne vous identifie pas; il sert uniquement à personnaliser l’ordre et les filtres par défaut.",
+    "backHome": "Retour à l’accueil"
   }
 }

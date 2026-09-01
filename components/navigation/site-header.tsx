@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/navigation/language-switcher";
 import { MobileMenu } from "@/components/navigation/mobile-menu";
+import { PetPreference } from "@/components/navigation/pet-preference";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/lib/types";
 
@@ -32,6 +33,7 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
           ))}
         </nav>
         <div className="flex items-center gap-3">
+          <PetPreference />
           <MobileMenu menuLabel={t("menu")} title={t("menuTitle")} closeLabel={t("closeMenu")} links={links} />
           <LanguageSwitcher currentLocale={locale} ariaLabel={t("language")} />
         </div>

@@ -3,8 +3,18 @@ import { getTranslations } from "next-intl/server";
 import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
+import { PetPreference } from "@/components/navigation/pet-preference";
+import { getLocaleOrNotFound } from "@/lib/locale";
+import { getLocaleMetadata } from "@/lib/metadata";
 
-export default async function HomePage() {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const locale = getLocaleOrNotFound((await params).locale);
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+  return getLocaleMetadata({ locale, path: "/", title: t("title"), description: t("description") });
+}
+
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  getLocaleOrNotFound((await params).locale);
   const t = await getTranslations("Home");
   const nav = await getTranslations("Navigation");
   const features = t.raw("features") as Array<{ title: string; description: string }>;
@@ -42,6 +52,8 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      <PetPreference onboarding />
 
       <section className="border-y border-border/70 bg-card">
         <div className="mx-auto grid w-full max-w-7xl gap-4 px-4 py-8 sm:grid-cols-3 sm:px-6 lg:px-8">

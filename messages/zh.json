@@ -133,5 +133,35 @@
   "Guide": {
     "sourcesTitle": "来源",
     "bodyLabel": "关于这篇指南"
+  },
+  "Filter": {
+    "title": "筛选宠物食品",
+    "all": "全部",
+    "species": "宠物",
+    "foodType": "食品类型",
+    "lifeStage": "生命周期",
+    "clear": "清除筛选",
+    "showing": "显示 {count} 个产品"
+  },
+  "PetPreference": {
+    "welcome": "欢迎来到 Maple Bowl",
+    "change": "宠物偏好",
+    "close": "关闭偏好选择",
+    "question": "你想优先了解哪一类宠物？",
+    "skip": "暂时跳过",
+    "changeLater": "你可以随时修改这个选择。",
+    "options": {
+      "dog": { "title": "狗狗", "short": "狗狗", "description": "优先显示狗狗食品和相关指南。" },
+      "cat": { "title": "猫咪", "short": "猫咪", "description": "优先显示猫咪食品和相关指南。" },
+      "both": { "title": "我同时养狗和猫", "short": "狗狗 + 猫咪", "description": "平衡显示狗狗和猫咪内容。" },
+      "unset": { "title": "跳过", "short": "全部宠物", "description": "" }
+    }
+  },
+  "Privacy": {
+    "title": "隐私",
+    "description": "了解 Maple Bowl 如何处理本网站使用的少量信息。",
+    "petCookieTitle": "功能性宠物偏好",
+    "petCookieBody": "Maple Bowl 可以通过 maple_paws_pet cookie 保存你对狗狗或猫咪内容的偏好。它不会创建账户或识别你的身份，只用于调整内容顺序和默认筛选。",
+    "backHome": "返回首页"
   }
 }

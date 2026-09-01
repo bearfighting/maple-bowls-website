@@ -6,11 +6,12 @@ import { SectionContainer } from "@/components/ui/section-container";
 import { getBrands } from "@/lib/content";
 import { getLocaleOrNotFound } from "@/lib/locale";
 import { routing } from "@/i18n/routing";
+import { getLocaleMetadata } from "@/lib/metadata";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const locale = getLocaleOrNotFound((await params).locale);
   const t = await getTranslations({ locale, namespace: "Content" });
-  return { title: t("brandsTitle"), description: t("brandsDescription") };
+  return getLocaleMetadata({ locale, path: "/brands", title: t("brandsTitle"), description: t("brandsDescription") });
 }
 
 export default async function BrandsPage({ params }: { params: Promise<{ locale: string }> }) {

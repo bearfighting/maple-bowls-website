@@ -8,6 +8,7 @@ import { SectionContainer } from "@/components/ui/section-container";
 import { getBrandBySlug, getBrandWithProducts, getBrands, getLocalizedText } from "@/lib/content";
 import { getLocaleOrNotFound } from "@/lib/locale";
 import { routing } from "@/i18n/routing";
+import { getLocaleMetadata } from "@/lib/metadata";
 import type { FoodType, Species } from "@/lib/types";
 
 type Params = Promise<{ locale: string; slug: string }>;
@@ -21,7 +22,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const locale = getLocaleOrNotFound(rawLocale);
   const brand = getBrandBySlug(slug);
   if (!brand) notFound();
-  return { title: getLocalizedText(brand.name, locale), description: getLocalizedText(brand.description, locale) };
+  return getLocaleMetadata({
+    locale,
+    path: `/brands/${slug}`,
+    title: getLocalizedText(brand.name, locale),
+    description: getLocalizedText(brand.description, locale),
+  });
 }
 
 export default async function BrandDetailPage({ params }: { params: Params }) {
