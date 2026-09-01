@@ -13,7 +13,9 @@
     "language": "Langue",
     "home": "Accueil Maple Bowl",
     "primary": "Navigation principale",
-    "menu": "Ouvrir le menu"
+    "menu": "Ouvrir le menu",
+    "menuTitle": "Menu",
+    "closeMenu": "Fermer le menu"
   },
   "Home": {
     "eyebrow": "Perspective canadienne · Information fiable",
@@ -41,7 +43,28 @@
     "copyright": "© Maple Bowl. Tous droits réservés.",
     "about": "À propos",
     "methodology": "Méthodologie",
-    "privacy": "Confidentialité"
+    "privacy": "Confidentialité",
+    "language": "Langue"
+  },
+  "ComingSoon": {
+    "badge": "Bientôt disponible",
+    "title": "{section} arrive bientôt",
+    "description": "Nous préparons du contenu pratique et réfléchi pour cette section de Maple Bowl. Revenez bientôt pour apprendre et explorer plus sereinement.",
+    "backHome": "Retour à l’accueil",
+    "home": "Accueil",
+    "breadcrumb": "Fil d’Ariane",
+    "sections": {
+      "nutritionGuide": "Guide nutritionnel",
+      "reviews": "Avis sur les produits",
+      "brands": "Marques",
+      "recipes": "Recettes",
+      "videos": "Vidéos",
+      "tools": "Outils",
+      "search": "Recherche",
+      "about": "À propos",
+      "methodology": "Méthodologie",
+      "privacy": "Confidentialité"
+    }
   },
   "Error": {
     "title": "Un problème est survenu",

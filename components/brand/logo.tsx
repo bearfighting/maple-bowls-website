@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 
 export function Logo({ homeLabel }: { homeLabel: string }) {
   return (
-    <Link href="/" className="flex items-center gap-2" aria-label={homeLabel}>
+    <Link href="/" className="flex items-center gap-2 rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label={homeLabel}>
       <Image
         src="/brand/favicon.png"
         alt=""

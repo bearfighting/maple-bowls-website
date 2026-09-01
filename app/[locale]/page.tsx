@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "@/i18n/navigation";
 
@@ -20,8 +20,8 @@ export default async function HomePage() {
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-8 text-muted-foreground">{t("description")}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/nutrition-guide"><Button>{t("primaryCta")}</Button></Link>
-              <Link href="/reviews"><Button variant="outline">{t("secondaryCta")}</Button></Link>
+              <Link href="/nutrition-guide" className={buttonVariants()}>{t("primaryCta")}</Link>
+              <Link href="/reviews" className={buttonVariants({ variant: "outline" })}>{t("secondaryCta")}</Link>
             </div>
             <p className="mt-6 text-sm text-muted-foreground">{t("languageLabel")}</p>
           </div>
@@ -64,7 +64,7 @@ export default async function HomePage() {
             { href: "/nutrition-guide", title: nav("nutritionGuide"), color: "bg-primary text-primary-foreground" },
             { href: "/brands", title: nav("brands"), color: "bg-secondary text-secondary-foreground" },
             { href: "/reviews", title: nav("reviews"), color: "bg-accent text-accent-foreground" },
-          ].map((item) => <Link key={item.href} href={item.href} className={`rounded-2xl p-6 font-display text-2xl font-bold transition-transform hover:-translate-y-1 ${item.color}`}>{item.title}<span className="mt-10 block font-sans text-sm font-semibold opacity-80">{t("exploreLink")}</span></Link>)}
+          ].map((item) => <Link key={item.href} href={item.href} className={`rounded-2xl p-6 font-display text-2xl font-bold transition-transform hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${item.color}`}>{item.title}<span className="mt-10 block font-sans text-sm font-semibold opacity-80">{t("exploreLink")}</span></Link>)}
         </div>
       </section>
     </div>

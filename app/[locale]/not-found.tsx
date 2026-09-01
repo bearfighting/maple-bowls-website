@@ -8,7 +8,7 @@ export default async function NotFound() {
       <p className="text-6xl">🐾</p>
       <h1 className="mt-6 font-display text-4xl font-bold">{t("title")}</h1>
       <p className="mt-3 text-muted-foreground">{t("description")}</p>
-      <Link href="/" className="mt-8 rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground">{t("backHome")}</Link>
+      <Link href="/" className="mt-8 rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">{t("backHome")}</Link>
     </section>
   );
 }
