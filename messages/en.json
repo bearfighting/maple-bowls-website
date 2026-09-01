@@ -69,5 +69,56 @@
   "Error": {
     "title": "Something went wrong",
     "retry": "Try again"
+  },
+  "Content": {
+    "brandsTitle": "Brands",
+    "brandsDescription": "Explore pet food brands with a Canadian perspective.",
+    "brand": "Brand",
+    "productsTitle": "Products",
+    "productsDescription": "A small starting set of product records for learning and comparison.",
+    "product": "Product",
+    "foodTitle": "Pet food",
+    "foodDescription": "Browse a small set of pet food records.",
+    "ingredientsTitle": "Ingredients",
+    "ingredient": "Ingredient",
+    "nutritionTitle": "Nutrition Guide",
+    "nutritionDescription": "Start with practical ways to read pet food information.",
+    "guide": "Guide",
+    "topic": "Topic",
+    "related": "Related content",
+    "learnMore": "Learn more",
+    "backToBrands": "Back to brands",
+    "backToProducts": "Back to products"
+  },
+  "Product": {
+    "species": { "dog": "Dogs", "cat": "Cats" },
+    "foodType": { "dry": "Dry food", "wet": "Wet food" },
+    "lifeStages": { "all-life-stages": "All life stages", "puppy": "Puppy", "adult": "Adult", "senior": "Senior" },
+    "factsTitle": "Guaranteed analysis",
+    "nutrient": "Nutrient",
+    "value": "Value",
+    "minimum": "min.",
+    "maximum": "max.",
+    "typical": "typical",
+    "ingredientsTitle": "Selected ingredients",
+    "noIngredients": "No ingredient details are available yet.",
+    "sourcesTitle": "Sources",
+    "manufacturer": "Manufacturer",
+    "official": "Official",
+    "editorial": "Editorial",
+    "accessed": "accessed",
+    "lastVerified": "Last verified",
+    "notesTitle": "Maple Bowl notes",
+    "draft": "Draft record",
+    "valueMissing": "Not available in the current record"
+  },
+  "Ingredient": {
+    "aliases": "Also known as",
+    "usedIn": "Used in these products",
+    "noProducts": "No related products are available yet."
+  },
+  "Guide": {
+    "sourcesTitle": "Sources",
+    "bodyLabel": "About this guide"
   }
 }

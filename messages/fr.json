@@ -69,5 +69,56 @@
   "Error": {
     "title": "Un problème est survenu",
     "retry": "Réessayer"
+  },
+  "Content": {
+    "brandsTitle": "Marques",
+    "brandsDescription": "Découvrez des marques d’aliments pour animaux avec une perspective canadienne.",
+    "brand": "Marque",
+    "productsTitle": "Produits",
+    "productsDescription": "Un petit ensemble de fiches pour apprendre et comparer.",
+    "product": "Produit",
+    "foodTitle": "Aliments pour animaux",
+    "foodDescription": "Parcourez un petit ensemble de fiches produit.",
+    "ingredientsTitle": "Ingrédients",
+    "ingredient": "Ingrédient",
+    "nutritionTitle": "Guide nutritionnel",
+    "nutritionDescription": "Commencez par des façons pratiques de lire les informations sur les aliments.",
+    "guide": "Guide",
+    "topic": "Thème",
+    "related": "Contenu associé",
+    "learnMore": "En savoir plus",
+    "backToBrands": "Retour aux marques",
+    "backToProducts": "Retour aux produits"
+  },
+  "Product": {
+    "species": { "dog": "Chiens", "cat": "Chats" },
+    "foodType": { "dry": "Aliment sec", "wet": "Aliment humide" },
+    "lifeStages": { "all-life-stages": "Tous les stades de vie", "puppy": "Chiot", "adult": "Adulte", "senior": "Senior" },
+    "factsTitle": "Analyse garantie",
+    "nutrient": "Nutriment",
+    "value": "Valeur",
+    "minimum": "min.",
+    "maximum": "max.",
+    "typical": "générale",
+    "ingredientsTitle": "Ingrédients sélectionnés",
+    "noIngredients": "Les détails sur les ingrédients ne sont pas encore disponibles.",
+    "sourcesTitle": "Sources",
+    "manufacturer": "Fabricant",
+    "official": "Officielle",
+    "editorial": "Éditoriale",
+    "accessed": "consultée",
+    "lastVerified": "Dernière vérification",
+    "notesTitle": "Notes Maple Bowl",
+    "draft": "Fiche brouillon",
+    "valueMissing": "Non disponible dans la fiche actuelle"
+  },
+  "Ingredient": {
+    "aliases": "Aussi appelé",
+    "usedIn": "Présent dans ces produits",
+    "noProducts": "Aucun produit associé n’est disponible pour le moment."
+  },
+  "Guide": {
+    "sourcesTitle": "Sources",
+    "bodyLabel": "À propos de ce guide"
   }
 }
