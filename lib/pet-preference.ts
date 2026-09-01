@@ -3,6 +3,10 @@ import type { PetPreference, Product, Species } from "@/lib/types";
 export const PET_PREFERENCE_COOKIE = "maple_paws_pet";
 export const PET_PREFERENCE_CHANGE_EVENT = "maple-pet-preference-change";
 
+export function parsePetPreference(value: string | undefined): PetPreference {
+  return value === "dog" || value === "cat" || value === "both" || value === "unset" ? value : "unset";
+}
+
 export function sortProductsByPreference<T extends { product: Pick<Product, "species"> }>(
   items: ReadonlyArray<T>,
   preference: PetPreference,

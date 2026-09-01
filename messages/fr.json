@@ -10,6 +10,7 @@
     "recipes": "Recettes",
     "videos": "Vidéos",
     "tools": "Outils",
+    "search": "Recherche",
     "language": "Langue",
     "home": "Accueil Maple Bowl",
     "primary": "Navigation principale",
@@ -172,5 +173,18 @@
     "petCookieTitle": "Préférence fonctionnelle pour l’animal",
     "petCookieBody": "Maple Bowl peut enregistrer votre préférence pour les chiens ou les chats dans le cookie maple_paws_pet. Il ne crée pas de compte et ne vous identifie pas; il sert uniquement à personnaliser l’ordre et les filtres par défaut.",
     "backHome": "Retour à l’accueil"
+  },
+  "Search": {
+    "title": "Rechercher dans Maple Bowl",
+    "description": "Trouvez des marques, des produits, des ingrédients et des guides nutritionnels.",
+    "placeholder": "Rechercher un nom ou un ingrédient",
+    "submit": "Rechercher",
+    "clear": "Effacer la recherche",
+    "noInput": "Commencez par un nom de marque, de produit, d’ingrédient ou de guide.",
+    "noResults": "Aucun contenu correspondant n’a été trouvé.",
+    "error": "La recherche est temporairement indisponible. Veuillez réessayer plus tard.",
+    "resultsCount": "{count} résultats",
+    "tooMany": "Les {count} premiers résultats sont affichés.",
+    "types": { "brand": "Marque", "product": "Produit", "ingredient": "Ingrédient", "topic": "Thème", "guide": "Guide" }
   }
 }

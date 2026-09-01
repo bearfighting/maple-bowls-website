@@ -9,6 +9,7 @@ import type { Locale } from "@/lib/types";
 export async function SiteHeader({ locale }: { locale: Locale }) {
   const t = await getTranslations("Navigation");
   const links = [
+    { href: "/search", label: t("search") },
     { href: "/nutrition-guide", label: t("nutritionGuide") },
     { href: "/reviews", label: t("reviews") },
     { href: "/brands", label: t("brands") },

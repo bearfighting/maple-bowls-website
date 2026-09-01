@@ -14,7 +14,8 @@
     "format:check:m3": "prettier --check \"app/[locale]/brands/**/*.tsx\" \"app/[locale]/food/**/*.tsx\" \"app/[locale]/ingredients/**/*.tsx\" \"app/[locale]/nutrition-guide/**/*.tsx\" \"components/content/content-status-badge.tsx\" \"components/product/**/*.tsx\" \"content/nutrition-topics/index.ts\" \"lib/content*.ts\" \"lib/types.ts\" \"scripts/**/*.ts\" \"messages/*.json\" \"package.json\" \"next.config.ts\" \"tsconfig.json\" \"MVP-ROADMAP.md\"",
     "validate:content": "tsx scripts/validate-content.ts",
     "validate:messages": "tsx scripts/validate-messages.ts",
-    "test:content": "tsx scripts/test-content.ts"
+    "test:content": "tsx scripts/test-content.ts",
+    "test:search": "tsx scripts/test-search.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
