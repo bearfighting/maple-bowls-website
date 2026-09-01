@@ -5,7 +5,9 @@ export default async function NotFound() {
   const t = await getTranslations("NotFound");
   return (
     <section className="mx-auto flex min-h-[50vh] max-w-2xl flex-col items-center justify-center px-4 py-20 text-center">
-      <p className="text-6xl">🐾</p>
+      <p className="text-6xl" aria-hidden="true">
+        🐾
+      </p>
       <h1 className="mt-6 font-display text-4xl font-bold">{t("title")}</h1>
       <p className="mt-3 text-muted-foreground">{t("description")}</p>
       <Link

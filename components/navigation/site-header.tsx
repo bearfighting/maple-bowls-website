@@ -22,7 +22,7 @@ export async function SiteHeader({ locale }: { locale: Locale }) {
     <header className="border-b border-border/70 bg-background/95">
       <div className="mx-auto flex min-h-20 w-full max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
         <Logo homeLabel={t("home")} />
-        <nav aria-label={t("primary")} className="hidden items-center gap-5 lg:flex">
+        <nav aria-label={t("primary")} className="hidden items-center gap-5 xl:flex">
           {links.map((link) => (
             <Link
               key={link.href}

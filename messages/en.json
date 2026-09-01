@@ -165,6 +165,26 @@
     "petCookieBody": "Maple Bowl can save your dog or cat content preference in the maple_paws_pet cookie. It does not create an account or identify you, and it is used only to personalize ordering and default filters.",
     "backHome": "Back to home"
   },
+  "About": {
+    "title": "About Maple Bowl",
+    "description": "Maple Bowl offers clear, calm and information-led food and nutrition content for pet families.",
+    "audienceTitle": "Who we serve",
+    "audienceBody": "This site is for dog and cat families who want to understand pet food labels, ingredients and brand information. We begin with a Canadian perspective while leaving room to grow across regions.",
+    "principlesTitle": "Our principles",
+    "principlesBody": "We help people understand information before creating purchase pressure. Product facts, manufacturer statements and Maple Bowl explanations are kept distinct where possible; static content is marked as draft until it is reviewed.",
+    "contactTitle": "Found an error?",
+    "contactBody": "If you notice an issue with content, sources or translation, please contact us."
+  },
+  "Methodology": {
+    "title": "Methodology",
+    "description": "How Maple Bowl organizes sources, product facts and editorial notes.",
+    "sourcesTitle": "Content sources",
+    "sourcesBody": "The MVP uses static TypeScript content records. Product and brand facts prioritize manufacturer or official pages, with source names and access dates retained.",
+    "layersTitle": "Different information layers",
+    "layersBody": "Manufacturer facts are product information from a source; Maple Bowl notes are editorial explanations that help interpret a record; editorial content is Maple Bowl’s educational writing. They should not be treated as the same kind of fact.",
+    "statusTitle": "Draft and verified status",
+    "statusBody": "The current sample content primarily validates page structure and is shown as draft. Products, lots, ingredients and sources still need review before public factual publication. Nutrition content does not replace veterinary advice."
+  },
   "Search": {
     "title": "Search Maple Bowl",
     "description": "Find brands, products, ingredients and nutrition guidance.",

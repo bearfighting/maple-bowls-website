@@ -165,6 +165,26 @@
     "petCookieBody": "Maple Bowl 可以通过 maple_paws_pet cookie 保存你对狗狗或猫咪内容的偏好。它不会创建账户或识别你的身份，只用于调整内容顺序和默认筛选。",
     "backHome": "返回首页"
   },
+  "About": {
+    "title": "关于 Maple Bowl",
+    "description": "Maple Bowl 为宠物家庭提供清晰、温和、以信息为基础的食品与营养内容。",
+    "audienceTitle": "我们服务谁",
+    "audienceBody": "这里的内容面向希望读懂宠物食品标签、配料和品牌信息的狗狗与猫咪家庭。我们以加拿大视角开始，也保留面向更多地区扩展的空间。",
+    "principlesTitle": "我们的原则",
+    "principlesBody": "我们优先帮助你理解信息，而不是制造购买压力。产品事实、制造商声明和 Maple Bowl 的解释会尽量分开呈现；静态内容在完成核验前会明确标记为草稿。",
+    "contactTitle": "发现错误",
+    "contactBody": "如果你发现内容、来源或翻译需要修正，欢迎联系我们。"
+  },
+  "Methodology": {
+    "title": "研究方法",
+    "description": "了解 Maple Bowl 如何组织来源、产品事实和编辑说明。",
+    "sourcesTitle": "内容来源",
+    "sourcesBody": "MVP 使用静态 TypeScript 内容记录。产品和品牌事实优先参考制造商或官方页面，并保留来源名称与访问日期。",
+    "layersTitle": "不同信息层级",
+    "layersBody": "Manufacturer facts 是来源中的产品信息；Maple Bowl notes 是帮助理解记录的编辑说明；editorial content 是 Maple Bowl 的教育性表达。它们不应被混为同一种事实。",
+    "statusTitle": "草稿与核验",
+    "statusBody": "当前样例内容主要用于验证页面结构，并会显示草稿状态。正式发布前仍需重新核对产品、批次、配料和来源。营养内容不能替代兽医建议。"
+  },
   "Search": {
     "title": "搜索 Maple Bowl",
     "description": "查找品牌、产品、配料和营养指南。",

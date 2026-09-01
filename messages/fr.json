@@ -174,6 +174,26 @@
     "petCookieBody": "Maple Bowl peut enregistrer votre préférence pour les chiens ou les chats dans le cookie maple_paws_pet. Il ne crée pas de compte et ne vous identifie pas; il sert uniquement à personnaliser l’ordre et les filtres par défaut.",
     "backHome": "Retour à l’accueil"
   },
+  "About": {
+    "title": "À propos de Maple Bowl",
+    "description": "Maple Bowl propose aux familles d’animaux des contenus clairs et fondés sur l’information concernant l’alimentation et la nutrition.",
+    "audienceTitle": "À qui nous nous adressons",
+    "audienceBody": "Ce site s’adresse aux familles de chiens et de chats qui souhaitent comprendre les étiquettes, les ingrédients et les informations sur les marques. Nous commençons avec une perspective canadienne, tout en gardant la possibilité de nous étendre à d’autres régions.",
+    "principlesTitle": "Nos principes",
+    "principlesBody": "Nous aidons d’abord à comprendre l’information, sans créer de pression d’achat. Les faits sur les produits, les déclarations des fabricants et les explications de Maple Bowl sont distingués autant que possible; le contenu statique reste marqué comme brouillon jusqu’à sa vérification.",
+    "contactTitle": "Vous avez trouvé une erreur ?",
+    "contactBody": "Si vous remarquez un problème de contenu, de source ou de traduction, contactez-nous."
+  },
+  "Methodology": {
+    "title": "Méthodologie",
+    "description": "Comment Maple Bowl organise les sources, les faits sur les produits et les notes éditoriales.",
+    "sourcesTitle": "Sources du contenu",
+    "sourcesBody": "Le MVP utilise des fiches de contenu statiques en TypeScript. Les faits sur les produits et les marques privilégient les pages du fabricant ou les pages officielles, avec le nom de la source et la date de consultation.",
+    "layersTitle": "Différents niveaux d’information",
+    "layersBody": "Les faits du fabricant sont les informations du produit issues d’une source; les notes Maple Bowl sont des explications éditoriales; le contenu éditorial est le texte éducatif de Maple Bowl. Ils ne doivent pas être considérés comme un seul type de fait.",
+    "statusTitle": "Brouillon et vérifié",
+    "statusBody": "Le contenu actuel sert principalement à valider la structure des pages et est affiché comme brouillon. Les produits, lots, ingrédients et sources doivent encore être vérifiés avant publication factuelle. Le contenu nutritionnel ne remplace pas l’avis d’un vétérinaire."
+  },
   "Search": {
     "title": "Rechercher dans Maple Bowl",
     "description": "Trouvez des marques, des produits, des ingrédients et des guides nutritionnels.",

@@ -11,7 +11,13 @@ import { getLocaleMetadata } from "@/lib/metadata";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const locale = getLocaleOrNotFound((await params).locale);
   const t = await getTranslations({ locale, namespace: "Content" });
-  return getLocaleMetadata({ locale, path: "/brands", title: t("brandsTitle"), description: t("brandsDescription") });
+  return getLocaleMetadata({
+    locale,
+    path: "/brands",
+    title: t("brandsTitle"),
+    description: t("brandsDescription"),
+    noIndex: true,
+  });
 }
 
 export default async function BrandsPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Breadcrumb } from "@/components/navigation/breadcrumb";
 import { ContentStatusBadge } from "@/components/content/content-status-badge";
+import { ArticleJsonLd } from "@/components/content/article-json-ld";
 import { RelatedContent } from "@/components/content/related-content";
 import { SourceList } from "@/components/content/source-list";
 import { SectionContainer } from "@/components/ui/section-container";
@@ -19,6 +20,8 @@ import { getLocaleMetadata } from "@/lib/metadata";
 import { routing } from "@/i18n/routing";
 
 type Params = Promise<{ locale: string; slug: string }>;
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   const slugs = [...getNutritionTopics().map((topic) => topic.slug), ...getGuides().map((guide) => guide.slug)];
@@ -38,6 +41,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     title: getLocalizedText(title, locale),
     description: getLocalizedText(summary, locale),
     type: "article",
+    noIndex: entry.kind === "guide" ? entry.guide.status === "draft" : entry.topic.status === "draft",
   });
 }
 
@@ -62,6 +66,14 @@ export default async function GuideDetailPage({ params }: { params: Params }) {
 
   return (
     <SectionContainer>
+      {guide && (
+        <ArticleJsonLd
+          locale={locale}
+          slug={slug}
+          title={title}
+          description={getLocalizedText(guide.summary, locale)}
+        />
+      )}
       <Breadcrumb
         label={t("guide")}
         items={[

@@ -13,6 +13,8 @@ import type { FoodType, Species } from "@/lib/types";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return routing.locales.flatMap((locale) => getBrands().map((brand) => ({ locale, slug: brand.slug })));
 }
@@ -27,6 +29,7 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     path: `/brands/${slug}`,
     title: getLocalizedText(brand.name, locale),
     description: getLocalizedText(brand.description, locale),
+    noIndex: brand.status === "draft",
   });
 }
 
