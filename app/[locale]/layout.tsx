@@ -3,6 +3,7 @@ import { hasLocale } from "next-intl";
 import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
+import { getLocaleMetadata } from "@/lib/metadata";
 import { SiteFooter } from "@/components/navigation/site-footer";
 import { SiteHeader } from "@/components/navigation/site-header";
 import { routing } from "@/i18n/routing";
@@ -17,15 +18,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!hasLocale(routing.locales, locale)) notFound();
   const t = await getTranslations({ locale, namespace: "Metadata" });
   return {
-    title: t("title"),
-    description: t("description"),
+    ...getLocaleMetadata({ locale, path: "/", title: t("title"), description: t("description") }),
     icons: { icon: "/brand/favicon.png" },
-    openGraph: {
-      title: t("title"),
-      description: t("description"),
-      locale,
-      type: "website",
-    },
   };
 }
 

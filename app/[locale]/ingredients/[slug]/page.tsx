@@ -8,6 +8,7 @@ import { SourceList } from "@/components/content/source-list";
 import { SectionContainer } from "@/components/ui/section-container";
 import { getIngredients, getIngredientWithProducts, getLocalizedText } from "@/lib/content";
 import { getLocaleOrNotFound } from "@/lib/locale";
+import { getLocaleMetadata } from "@/lib/metadata";
 import { routing } from "@/i18n/routing";
 
 type Params = Promise<{ locale: string; slug: string }>;
@@ -22,10 +23,12 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const result = getIngredientWithProducts(slug);
   if (!result) notFound();
   const { ingredient } = result;
-  return {
+  return getLocaleMetadata({
+    locale,
+    path: `/ingredients/${slug}`,
     title: getLocalizedText(ingredient.name, locale),
     description: getLocalizedText(ingredient.description, locale),
-  };
+  });
 }
 
 export default async function IngredientDetailPage({ params }: { params: Params }) {

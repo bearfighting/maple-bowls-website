@@ -133,5 +133,35 @@
   "Guide": {
     "sourcesTitle": "Sources",
     "bodyLabel": "About this guide"
+  },
+  "Filter": {
+    "title": "Filter food",
+    "all": "All",
+    "species": "Pet",
+    "foodType": "Food type",
+    "lifeStage": "Life stage",
+    "clear": "Clear filters",
+    "showing": "Showing {count} products"
+  },
+  "PetPreference": {
+    "welcome": "Welcome to Maple Bowl",
+    "change": "Pet preference",
+    "close": "Close preference dialog",
+    "question": "Who should we focus on?",
+    "skip": "Skip for now",
+    "changeLater": "You can change this anytime.",
+    "options": {
+      "dog": { "title": "Dogs", "short": "Dogs", "description": "Focus on dog food and guidance." },
+      "cat": { "title": "Cats", "short": "Cats", "description": "Focus on cat food and guidance." },
+      "both": { "title": "I have both", "short": "Dogs + cats", "description": "Keep dog and cat content balanced." },
+      "unset": { "title": "Skip", "short": "All pets", "description": "" }
+    }
+  },
+  "Privacy": {
+    "title": "Privacy",
+    "description": "How Maple Bowl handles the small amount of information used by this site.",
+    "petCookieTitle": "Functional pet preference",
+    "petCookieBody": "Maple Bowl can save your dog or cat content preference in the maple_paws_pet cookie. It does not create an account or identify you, and it is used only to personalize ordering and default filters.",
+    "backHome": "Back to home"
   }
 }

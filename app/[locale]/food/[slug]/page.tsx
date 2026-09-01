@@ -7,29 +7,58 @@ import { IngredientList } from "@/components/product/ingredient-list";
 import { NutritionTable } from "@/components/product/nutrition-table";
 import { RelatedContent } from "@/components/content/related-content";
 import { SourceList } from "@/components/content/source-list";
+import { FoodDirectory } from "@/components/product/food-directory";
 import { SectionContainer } from "@/components/ui/section-container";
-import { getLocalizedText, getProductBySlug, getProductWithBrand, getProducts } from "@/lib/content";
+import {
+  getLocalizedText,
+  getProductBySlug,
+  getProductWithBrand,
+  getProducts,
+  getProductsWithBrands,
+} from "@/lib/content";
 import { getLocaleOrNotFound } from "@/lib/locale";
 import { routing } from "@/i18n/routing";
-import type { FoodType, Species } from "@/lib/types";
+import type { FoodType, Locale, Species } from "@/lib/types";
+import { getLocaleMetadata } from "@/lib/metadata";
 
 type Params = Promise<{ locale: string; slug: string }>;
 
 export async function generateStaticParams() {
-  return routing.locales.flatMap((locale) => getProducts().map((product) => ({ locale, slug: product.slug })));
+  return routing.locales.flatMap((locale) => [
+    { locale, slug: "dog" },
+    { locale, slug: "cat" },
+    ...getProducts().map((product) => ({ locale, slug: product.slug })),
+  ]);
 }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale: rawLocale, slug } = await params;
   const locale = getLocaleOrNotFound(rawLocale);
+  if (slug === "dog" || slug === "cat") {
+    const t = await getTranslations({ locale, namespace: "Content" });
+    const labels = await getTranslations({ locale, namespace: "Product" });
+    const speciesLabels = labels.raw("species") as Record<Species, string>;
+    return getLocaleMetadata({
+      locale,
+      path: `/food/${slug}`,
+      title: `${speciesLabels[slug]} · ${t("foodTitle")}`,
+      description: t("foodDescription"),
+    });
+  }
   const product = getProductBySlug(slug);
   if (!product) notFound();
-  return { title: getLocalizedText(product.name, locale), description: getLocalizedText(product.description, locale) };
+  return getLocaleMetadata({
+    locale,
+    path: `/food/${slug}`,
+    title: getLocalizedText(product.name, locale),
+    description: getLocalizedText(product.description, locale),
+  });
 }
 
 export default async function ProductDetailPage({ params }: { params: Params }) {
   const { locale: rawLocale, slug } = await params;
   const locale = getLocaleOrNotFound(rawLocale);
+  if (slug === "dog" || slug === "cat") return <SpeciesFoodPage locale={locale} species={slug} />;
   const product = getProductBySlug(slug);
   if (!product) notFound();
   const result = getProductWithBrand(slug);
@@ -127,6 +156,43 @@ export default async function ProductDetailPage({ params }: { params: Params }) 
           <SourceList sources={product.sources} labels={sourceLabels} lastVerifiedAt={product.lastVerifiedAt} />
         </div>
       </div>
+    </SectionContainer>
+  );
+}
+
+async function SpeciesFoodPage({ locale, species: selectedSpecies }: { locale: Locale; species: Species }) {
+  const t = await getTranslations({ locale, namespace: "Content" });
+  const labels = await getTranslations({ locale, namespace: "Product" });
+  const products = getProductsWithBrands().map(({ product, brand }) => ({
+    product,
+    brandName: getLocalizedText(brand.name, locale),
+  }));
+  return (
+    <SectionContainer>
+      <Breadcrumb
+        label={t("product")}
+        items={[
+          { label: (labels.raw("species") as Record<Species, string>)[selectedSpecies] },
+          { label: t("foodTitle") },
+        ]}
+      />
+      <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">{t("product")}</p>
+      <h1 className="mt-3 font-display text-4xl font-bold tracking-tight sm:text-5xl">
+        {(labels.raw("species") as Record<Species, string>)[selectedSpecies]} · {t("foodTitle")}
+      </h1>
+      <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{t("foodDescription")}</p>
+      <FoodDirectory
+        products={products}
+        locale={locale}
+        emptyLabel={t("empty")}
+        labels={{
+          species: labels.raw("species") as Record<Species, string>,
+          foodType: labels.raw("foodType") as Record<FoodType, string>,
+          lifeStages: labels.raw("lifeStages") as Record<string, string>,
+          status: t.raw("status") as Record<"draft" | "verified", string>,
+        }}
+        initialSpecies={selectedSpecies}
+      />
     </SectionContainer>
   );
 }

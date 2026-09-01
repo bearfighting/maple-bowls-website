@@ -7,11 +7,17 @@ import { SectionContainer } from "@/components/ui/section-container";
 import { getGuides, getLocalizedText, getNutritionTopics } from "@/lib/content";
 import { getLocaleOrNotFound } from "@/lib/locale";
 import { routing } from "@/i18n/routing";
+import { getLocaleMetadata } from "@/lib/metadata";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const locale = getLocaleOrNotFound((await params).locale);
   const t = await getTranslations({ locale, namespace: "Content" });
-  return { title: t("nutritionTitle"), description: t("nutritionDescription") };
+  return getLocaleMetadata({
+    locale,
+    path: "/nutrition-guide",
+    title: t("nutritionTitle"),
+    description: t("nutritionDescription"),
+  });
 }
 
 export async function generateStaticParams() {

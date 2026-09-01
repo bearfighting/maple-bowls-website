@@ -194,10 +194,10 @@ Home → Brand → Product → Ingredient → Nutrition Guide
 - [x] 实现 Nutrition Guide Landing。
 - [x] 实现 Brands Directory。
 - [x] 实现 Pet Food Directory。
-- [ ] 实现 Food Type、Life Stage、Species 的基础展示和筛选状态。
-- [ ] 实现 `/food/dog`、`/food/cat` 或等价的 species 入口。
+- [x] 实现 Food Type、Life Stage、Species 的基础展示和筛选状态。
+- [x] 实现 `/food/dog`、`/food/cat` 或等价的 species 入口。
 - [x] 为目录页添加 empty state。
-- [ ] 为产品详情页添加 loading/error/not-found 处理。
+- [x] 为产品详情页添加 loading/error/not-found 处理。
 - [x] 将页面内容从组件 JSX 中移出，统一放入 `content` 或 `data` 层。
 - [x] 为静态数据添加基础校验，避免 slug、关联 ID 和必填字段错误。
 - [x] 确定列表排序规则，先使用固定、可预测的排序。
@@ -229,30 +229,30 @@ Home → Brand → Product → Ingredient → Nutrition Guide
 
 ### Checklist
 
-- [ ] 建立 EN / FR / ZH UI translation dictionary。
-- [ ] 优先完成简体中文 UI、首页和核心页面文案。
+- [x] 建立 EN / FR / ZH UI translation dictionary。
+- [x] 优先完成简体中文 UI、首页和核心页面文案。
 - [ ] 对品牌名、产品专名和技术术语采用中文或中文 + 原文双语，并保留原文 alias。
-- [ ] 使用 `next-intl` 提供 Server Components 和 Client Components 的翻译访问方式。
-- [ ] 为 Header、Footer、按钮、Breadcrumb、筛选、空状态、错误页提供三语言文案。
-- [ ] 为核心品牌、产品、Ingredient 和 Guide 添加本地化字段或明确 fallback。
-- [ ] 明确缺少翻译时的行为：fallback、隐藏、或显示未翻译状态。
-- [ ] 实现 locale 切换并保留当前实体。
-- [ ] 添加 locale-aware `title`、description 和 Open Graph metadata。
-- [ ] 生成 canonical URL 和合适的 alternate/hreflang 信息。
-- [ ] 实现首次访问 Dog / Cat / Both / Skip 选择。
-- [ ] 使用 `maple_paws_pet` cookie 保存偏好。
-- [ ] 在 Header 提供修改偏好的入口。
-- [ ] 确保偏好只影响排序/默认筛选，不隐藏内容。
-- [ ] 为中文内容调整合理的 line-height 和段落宽度。
+- [x] 使用 `next-intl` 提供 Server Components 和 Client Components 的翻译访问方式。
+- [x] 为 Header、Footer、按钮、Breadcrumb、筛选、空状态、错误页提供三语言文案。
+- [x] 为核心品牌、产品、Ingredient 和 Guide 添加本地化字段或明确 fallback。
+- [x] 明确缺少翻译时的行为：当前 locale → zh → en → fr fallback。
+- [x] 实现 locale 切换并保留当前实体。
+- [x] 添加 locale-aware `title`、description 和 Open Graph metadata。
+- [x] 生成 canonical URL 和合适的 alternate/hreflang 信息。
+- [x] 实现首次访问 Dog / Cat / Both / Skip 选择。
+- [x] 使用 `maple_paws_pet` cookie 保存偏好。
+- [x] 在 Header 提供修改偏好的入口。
+- [x] 确保偏好影响排序，显式筛选不隐藏其他可访问内容。
+- [x] 为中文内容调整合理的 line-height 和段落宽度。
 
 ### 完成条件
 
-- [ ] `/en/...`、`/fr/...`、`/zh/...` 都能稳定渲染核心页面。
-- [ ] `/zh/...` 的核心用户流程优先达到完整可用，不能出现空白字段或未翻译 key。
-- [ ] 切换语言后仍停留在对应的品牌、产品或内容实体。
-- [ ] 缺少某篇文章翻译时，不会出现空标题、未翻译 key 或破坏布局。
-- [ ] 偏好选择刷新页面后仍然生效。
-- [ ] Dog 偏好用户仍可访问 Cat 内容，反之亦然。
+- [x] `/en/...`、`/fr/...`、`/zh/...` 都能稳定渲染核心页面。
+- [x] `/zh/...` 的核心用户流程优先达到完整可用，不能出现空白字段或未翻译 key。
+- [x] 切换语言后仍停留在对应的品牌、产品或内容实体。
+- [x] 缺少某篇文章翻译时，不会出现空标题、未翻译 key 或破坏布局。
+- [x] 偏好选择刷新页面后仍然生效。
+- [x] Dog 偏好用户仍可访问 Cat 内容，反之亦然。
 
 ## M5 — 搜索与内容发现
 
