@@ -10,6 +10,7 @@
     "recipes": "Recipes",
     "videos": "Videos",
     "tools": "Tools",
+    "search": "Search",
     "language": "Language",
     "home": "Maple Bowl home",
     "primary": "Primary navigation",
@@ -163,5 +164,18 @@
     "petCookieTitle": "Functional pet preference",
     "petCookieBody": "Maple Bowl can save your dog or cat content preference in the maple_paws_pet cookie. It does not create an account or identify you, and it is used only to personalize ordering and default filters.",
     "backHome": "Back to home"
+  },
+  "Search": {
+    "title": "Search Maple Bowl",
+    "description": "Find brands, products, ingredients and nutrition guidance.",
+    "placeholder": "Search by name or ingredient",
+    "submit": "Search",
+    "clear": "Clear search",
+    "noInput": "Start with a brand, product, ingredient or guide name.",
+    "noResults": "No matching content was found.",
+    "error": "Search is temporarily unavailable. Please try again later.",
+    "resultsCount": "{count} results",
+    "tooMany": "Showing the first {count} results.",
+    "types": { "brand": "Brand", "product": "Product", "ingredient": "Ingredient", "topic": "Topic", "guide": "Guide" }
   }
 }

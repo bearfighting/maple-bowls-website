@@ -10,6 +10,7 @@
     "recipes": "食谱",
     "videos": "视频",
     "tools": "工具",
+    "search": "搜索",
     "language": "语言",
     "home": "Maple Bowl 首页",
     "primary": "主导航",
@@ -163,5 +164,18 @@
     "petCookieTitle": "功能性宠物偏好",
     "petCookieBody": "Maple Bowl 可以通过 maple_paws_pet cookie 保存你对狗狗或猫咪内容的偏好。它不会创建账户或识别你的身份，只用于调整内容顺序和默认筛选。",
     "backHome": "返回首页"
+  },
+  "Search": {
+    "title": "搜索 Maple Bowl",
+    "description": "查找品牌、产品、配料和营养指南。",
+    "placeholder": "按名称或配料搜索",
+    "submit": "搜索",
+    "clear": "清除搜索",
+    "noInput": "可以从品牌、产品、配料或指南名称开始搜索。",
+    "noResults": "没有找到匹配的内容。",
+    "error": "搜索暂时不可用，请稍后再试。",
+    "resultsCount": "{count} 个结果",
+    "tooMany": "当前显示前 {count} 个结果。",
+    "types": { "brand": "品牌", "product": "产品", "ingredient": "配料", "topic": "主题", "guide": "指南" }
   }
 }

@@ -274,22 +274,26 @@ Guide 标题
 
 ### Checklist
 
-- [ ] 实现全局 Search Trigger 和 Search 页面/面板。
-- [ ] 对静态数据建立简单搜索索引或查询层。
-- [ ] 支持基础大小写、空格和重音符号规范化。
-- [ ] 支持多语言名称和 aliases。
-- [ ] 按实体类型、名称匹配度和 pet preference 做稳定排序。
-- [ ] 不因 Dog/Cat 偏好排除其他物种结果。
-- [ ] 实现无输入、无结果、结果过多和错误状态。
-- [ ] 在 Product、Ingredient、Topic、Guide 页面加入相关内容区。
-- [ ] 检查品牌 → 产品、产品 → Ingredient、Guide → 产品的链接闭环。
+- [x] 实现全局 Search Trigger 和 Search 页面/面板。
+- [x] 对静态数据建立可替换的搜索 repository 和查询层。
+- [x] 支持基础大小写、空格和重音符号规范化。
+- [x] 支持多语言名称和 aliases。
+- [x] 按实体类型、名称匹配度和 pet preference 做稳定排序。
+- [x] 不因 Dog/Cat 偏好排除其他物种结果。
+- [x] 实现无输入、无结果、结果过多和错误状态。
+- [x] 在 Product、Ingredient、Topic、Guide 页面复用显式关联内容区。
+- [x] 检查品牌 → 产品、产品 → Ingredient、Guide → 产品的链接闭环。
+
+当前 M5 使用 TypeScript 静态内容实现 `SearchRepository`；未来接入 CMS、API
+或数据库时，只需替换 repository，不改变搜索算法和页面接口。M5 不引入
+MDX、数据库、外部搜索服务或搜索分析。
 
 ### 完成条件
 
-- [ ] 可以通过品牌名、产品名、Ingredient alias 找到对应实体。
-- [ ] 搜索结果在 EN / FR / ZH 下都有合理的标题和链接。
-- [ ] 搜索结果点击后不会丢失 locale。
-- [ ] 相关内容不是随机推荐，而是有明确关联字段或人工关系。
+- [x] 可以通过品牌名、产品名、Ingredient alias 找到对应实体。
+- [x] 搜索结果在 EN / FR / ZH 下都有合理的标题和链接。
+- [x] 搜索结果点击后不会丢失 locale。
+- [x] 相关内容不是随机推荐，而是有明确关联字段或人工关系。
 
 ## M6 — 品质、SEO 和上线准备
 
