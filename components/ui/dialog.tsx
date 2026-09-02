@@ -25,14 +25,17 @@ export function Dialog({ open, onOpenChange, title, closeLabel, children }: Dial
     <dialog
       ref={dialogRef}
       aria-labelledby={titleId}
-      className="m-auto w-[min(32rem,calc(100vw-2rem))] rounded-3xl border border-border bg-card p-0 text-card-foreground shadow-2xl backdrop:bg-foreground/30"
+      className="m-auto max-h-[calc(100dvh-2rem)] w-[min(32rem,calc(100vw-2rem))] overflow-hidden rounded-3xl border border-border bg-card p-0 text-card-foreground shadow-2xl backdrop:bg-foreground/30"
       onCancel={(event) => {
         event.preventDefault();
         onOpenChange(false);
       }}
       onClose={() => onOpenChange(false)}
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onOpenChange(false);
+      }}
     >
-      <div className="p-6 sm:p-8">
+      <div className="flex max-h-[calc(100dvh-2rem)] flex-col p-6 sm:p-8">
         <div className="flex items-start justify-between gap-4">
           <h2 id={titleId} className="font-display text-2xl font-bold sm:text-3xl">
             {title}
@@ -46,7 +49,7 @@ export function Dialog({ open, onOpenChange, title, closeLabel, children }: Dial
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div className="mt-6">{children}</div>
+        <div className="mt-6 min-h-0 overflow-y-auto">{children}</div>
       </div>
     </dialog>
   );
