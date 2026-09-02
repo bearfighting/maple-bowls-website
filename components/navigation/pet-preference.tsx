@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { PawPrint } from "lucide-react";
 import { Dialog } from "@/components/ui/dialog";
 import type { PetPreference } from "@/lib/types";
 import { PET_PREFERENCE_CHANGE_EVENT, PET_PREFERENCE_COOKIE } from "@/lib/pet-preference";
@@ -19,6 +21,22 @@ function readPreference(): PetPreference | undefined {
 
 function writePreference(preference: PetPreference) {
   document.cookie = `${PET_PREFERENCE_COOKIE}=${preference}; Max-Age=${COOKIE_MAX_AGE}; Path=/; SameSite=Lax`;
+}
+
+function PreferenceIcon({ preference }: { preference: PetPreference | undefined }) {
+  const imageClassName = "size-7 shrink-0 object-contain";
+
+  if (preference === "dog") {
+    return <Image src="/brand/maple.png" alt="" width={32} height={32} className={imageClassName} />;
+  }
+  if (preference === "cat") {
+    return <Image src="/brand/milo.png" alt="" width={32} height={32} className={imageClassName} />;
+  }
+  if (preference === "both") {
+    return <Image src="/brand/maple-milo.png" alt="" width={40} height={28} className="h-7 w-10 shrink-0 object-contain" />;
+  }
+
+  return <PawPrint className="size-5 shrink-0" aria-hidden="true" />;
 }
 
 export function PetPreference({ onboarding = false }: { onboarding?: boolean }) {
@@ -59,11 +77,8 @@ export function PetPreference({ onboarding = false }: { onboarding?: boolean }) 
           aria-expanded={controlOpen}
           className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border bg-card px-0 text-sm font-bold text-foreground transition-colors hover:bg-muted disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 xl:h-auto xl:min-h-11 xl:w-auto xl:gap-2 xl:px-3 xl:py-2"
         >
-          <span className="xl:hidden" aria-hidden="true">
-            🐾
-          </span>
-          <span className="hidden xl:inline" aria-hidden="true">
-            {preference === "cat" ? "🐱" : preference === "dog" ? "🐶" : "🐾"}
+          <span aria-hidden="true">
+            <PreferenceIcon preference={preference} />
           </span>
           <span className="hidden whitespace-nowrap xl:inline">{currentLabel}</span>
         </button>
@@ -87,8 +102,8 @@ export function PetPreference({ onboarding = false }: { onboarding?: boolean }) 
               onClick={() => selectPreference(item)}
               className="rounded-2xl border border-border bg-background p-4 text-left transition-colors hover:border-primary hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
             >
-              <span className="text-2xl" aria-hidden="true">
-                {item === "dog" ? "🐶" : item === "cat" ? "🐱" : "🐾"}
+              <span className="text-primary" aria-hidden="true">
+                <PreferenceIcon preference={item} />
               </span>
               <span className="mt-2 block font-display text-lg font-bold">{t(`options.${item}.title`)}</span>
               <span className="mt-1 block text-sm text-muted-foreground">{t(`options.${item}.description`)}</span>
