@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import { Sheet } from "@/components/ui/sheet";
+import { usePathname } from "@/i18n/navigation";
+import { Dialog } from "@/components/ui/dialog";
 
 export function MobileMenu({
   menuLabel,
@@ -17,6 +18,7 @@ export function MobileMenu({
   links: ReadonlyArray<{ href: string; label: string }>;
 }) {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <div className="xl:hidden">
@@ -29,20 +31,28 @@ export function MobileMenu({
       >
         <Menu className="size-5" aria-hidden="true" />
       </button>
-      <Sheet open={open} onOpenChange={setOpen} title={title} closeLabel={closeLabel}>
-        <nav aria-label={menuLabel} className="flex flex-col gap-1">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={() => setOpen(false)}
-              className="rounded-xl px-4 py-3 text-base font-semibold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              {link.label}
-            </Link>
-          ))}
+      <Dialog open={open} onOpenChange={setOpen} title={title} closeLabel={closeLabel}>
+        <nav aria-label={menuLabel} className="flex flex-col gap-2">
+          {links.map((link) => {
+            const isActive = pathname === link.href || pathname.startsWith(`${link.href}/`);
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                aria-current={isActive ? "page" : undefined}
+                className={`min-h-11 rounded-2xl border p-4 text-base font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
+                  isActive
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-background text-foreground hover:border-primary hover:bg-muted"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
-      </Sheet>
+      </Dialog>
     </div>
   );
 }

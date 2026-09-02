@@ -5,6 +5,7 @@ import type { Locale } from "@/lib/types";
 
 export async function SiteFooter({ locale }: { locale: Locale }) {
   const t = await getTranslations("Footer");
+  const navigation = await getTranslations("Navigation");
   return (
     <footer className="mt-auto bg-primary text-primary-foreground">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-10 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
@@ -38,7 +39,12 @@ export async function SiteFooter({ locale }: { locale: Locale }) {
           </Link>
         </div>
         <div className="flex flex-col items-start gap-3 lg:items-end">
-          <LanguageSwitcher currentLocale={locale} ariaLabel={t("language")} />
+          <LanguageSwitcher
+            currentLocale={locale}
+            ariaLabel={t("language")}
+            title={navigation("languageTitle")}
+            closeLabel={navigation("closeLanguage")}
+          />
           <p className="text-xs text-primary-foreground/60">{t("copyright")}</p>
         </div>
       </div>

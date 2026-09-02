@@ -55,10 +55,17 @@ export function PetPreference({ onboarding = false }: { onboarding?: boolean }) 
           onClick={() => setControlOpen(true)}
           disabled={!hydrated}
           aria-label={t("change")}
-          className="inline-flex min-h-11 items-center gap-2 rounded-full border bg-card px-3 py-2 text-sm font-bold text-foreground transition-colors hover:bg-muted disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          aria-haspopup="dialog"
+          aria-expanded={controlOpen}
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border bg-card px-0 text-sm font-bold text-foreground transition-colors hover:bg-muted disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 xl:h-auto xl:min-h-11 xl:w-auto xl:gap-2 xl:px-3 xl:py-2"
         >
-          <span aria-hidden="true">{preference === "cat" ? "🐱" : preference === "dog" ? "🐶" : "🐾"}</span>
-          <span>{currentLabel}</span>
+          <span className="xl:hidden" aria-hidden="true">
+            🐾
+          </span>
+          <span className="hidden xl:inline" aria-hidden="true">
+            {preference === "cat" ? "🐱" : preference === "dog" ? "🐶" : "🐾"}
+          </span>
+          <span className="hidden whitespace-nowrap xl:inline">{currentLabel}</span>
         </button>
       )}
       <Dialog
